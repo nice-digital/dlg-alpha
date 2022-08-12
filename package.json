@@ -19,7 +19,11 @@
   },
   "devDependencies": {
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.3"
+    "eslint-config-next": "12.2.3",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.10.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^27.0.0"
   },
   "browserslist": [
     "extends @nice-digital/browserslist-config"
