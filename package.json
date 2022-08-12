@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nice-digital/browserslist-config": "^2.0.1",
+    "@nice-digital/design-system": "^4.0.0",
+    "@nice-digital/global-nav": "^5.0.890",
     "next": "^12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.54.4"
   },
   "devDependencies": {
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3"
-  }
+  },
+  "browserslist": [
+    "extends @nice-digital/browserslist-config"
+  ]
 }
