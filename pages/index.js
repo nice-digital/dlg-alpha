@@ -12,7 +12,6 @@ export default function Home() {
 					name="description"
 					content="Prototype front end build for Digital Living Guidelines"
 				/>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Header service="guidance" skipLinkId="content-start" />
