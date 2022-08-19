@@ -1,10 +1,11 @@
 import Head from "next/head";
+import { Header, Footer, Main } from "@nice-digital/global-nav";
 
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
 	return (
-		<div className="container container--full">
+		<>
 			<Head>
 				<title>DLG Alpha</title>
 				<meta
@@ -14,10 +15,16 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main>
-				<h1>DLG Prototype</h1>
-				<p className={styles.intro}>Under construction!</p>
-			</main>
-		</div>
+			<Header service="guidance" skipLinkId="content-start" />
+
+			<Main>
+				<div className="container">
+					<h1>DLG Prototype</h1>
+					<p className={styles.intro}>Under construction!</p>
+				</div>
+			</Main>
+
+			<Footer />
+		</>
 	);
 }
