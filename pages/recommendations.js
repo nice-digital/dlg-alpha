@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>DLG Alpha</title>
+				<title>Recommendations | DLG Alpha</title>
 				<meta
 					name="description"
 					content="Prototype front end build for Digital Living Guidelines"
@@ -19,12 +19,10 @@ export default function Home() {
 
 			<Main>
 				<div className="container">
-					<h1>DLG Prototype</h1>
-					<h2>
-						<Link href="/recommendations">
-							Treating early HER2-positive invasive breast cancer
-						</Link>
-					</h2>
+					<h1>Treating early HER2-positive invasive breast cancer</h1>
+					<p>
+						<Link href="/evidence">Evidence page</Link>
+					</p>
 					<ul>
 						<li>Lorem ipsum dolor sit amet,</li>
 						<li>consectetur adipiscing elit.</li>
