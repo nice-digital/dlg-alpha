@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Header, Footer, Main } from "@nice-digital/global-nav";
-
-import styles from "../styles/Home.module.scss";
+import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 
 export default function Home() {
 	return (
@@ -19,7 +18,16 @@ export default function Home() {
 
 			<Main>
 				<div className="container">
-					<h1>DLG Prototype</h1>
+					<Breadcrumbs>
+						<Breadcrumb>Overview</Breadcrumb>
+					</Breadcrumbs>
+
+					<h1>Breast Cancer</h1>
+					<p className="lead">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+						euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+						accumsan
+					</p>
 					<h2>
 						<Link href="/recommendations">
 							Treating early HER2-positive invasive breast cancer

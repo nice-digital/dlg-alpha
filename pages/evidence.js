@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Header, Footer, Main } from "@nice-digital/global-nav";
-
-import styles from "../styles/Home.module.scss";
+import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 
 export default function Home() {
 	return (
@@ -19,6 +18,12 @@ export default function Home() {
 
 			<Main>
 				<div className="container">
+					<Breadcrumbs>
+						<Breadcrumb to="/">Overview</Breadcrumb>
+						<Breadcrumb to="/recommendations">Recommendations</Breadcrumb>
+						<Breadcrumb>Evidence</Breadcrumb>
+					</Breadcrumbs>
+
 					<h1>Evidence</h1>
 					<ul>
 						<li>Lorem ipsum dolor sit amet,</li>
