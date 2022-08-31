@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Header, Footer, Main } from "@nice-digital/global-nav";
 import { Breadcrumbs, Breadcrumb } from "@nice-digital/nds-breadcrumbs";
 
 export default function Home() {
@@ -14,27 +13,21 @@ export default function Home() {
 				/>
 			</Head>
 
-			<Header service="guidance" skipLinkId="content-start" />
+			<div className="container">
+				<Breadcrumbs>
+					<Breadcrumb to="/">Overview</Breadcrumb>
+					<Breadcrumb to="/recommendations">Recommendations</Breadcrumb>
+					<Breadcrumb>Evidence</Breadcrumb>
+				</Breadcrumbs>
 
-			<Main>
-				<div className="container">
-					<Breadcrumbs>
-						<Breadcrumb to="/">Overview</Breadcrumb>
-						<Breadcrumb to="/recommendations">Recommendations</Breadcrumb>
-						<Breadcrumb>Evidence</Breadcrumb>
-					</Breadcrumbs>
-
-					<h1>Evidence</h1>
-					<ul>
-						<li>Lorem ipsum dolor sit amet,</li>
-						<li>consectetur adipiscing elit.</li>
-						<li>Aenean euismod bibendum laoreet.</li>
-						<li>Proin gravida dolor sit amet lacus accumsan</li>
-					</ul>
-				</div>
-			</Main>
-
-			<Footer />
+				<h1>Evidence</h1>
+				<ul>
+					<li>Lorem ipsum dolor sit amet,</li>
+					<li>consectetur adipiscing elit.</li>
+					<li>Aenean euismod bibendum laoreet.</li>
+					<li>Proin gravida dolor sit amet lacus accumsan</li>
+				</ul>
+			</div>
 		</>
 	);
 }
