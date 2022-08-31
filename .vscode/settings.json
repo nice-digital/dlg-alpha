@@ -1,5 +1,8 @@
 {
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "editor.rulers": [80],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.endOfLine": "lf",
@@ -7,6 +10,7 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
+  "stylelint.validate": ["css", "scss", "postcss"],
   "workbench.colorCustomizations": {
     "activityBar.background": "#404040",
     "titleBar.activeBackground": "#404040",
