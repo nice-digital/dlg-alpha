@@ -29,18 +29,19 @@
 }
 
 .description {
-  border-bottom: 1px solid colours.$recommendation-border;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
 }
 
 .linkList {
+  border-top: 1px solid colours.$recommendation-border;
   display: flex;
   flex-wrap: wrap;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
   list-style: none;
   margin: 0;
+  max-width: none;
 
   li {
     border-right: 1px solid colours.$recommendation-border;
