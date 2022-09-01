@@ -1,5 +1,8 @@
 @use '@nice-digital/nds-core/scss/colours/tokens/global' as *;
-@use '@nice-digital/nds-core/scss/colours';
 
+// Guidance warning
+$guidance-warning-background: #ffeb3b; // Matching the Covid banner for now... do we want this to come from/be added to the palette though?
+
+// Recommendations
 $recommendation-background: $white;
-$recommendation-border: colours.$border;
+$recommendation-border: $nice-cream-3;

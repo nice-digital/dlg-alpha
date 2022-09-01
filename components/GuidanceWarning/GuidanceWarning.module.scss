@@ -1,0 +1,11 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '../../styles/colours';
+
+.guidanceWarning {
+  @include typography.font-size(-2);
+  background: colours.$guidance-warning-background;
+  font-weight: bold;
+  padding: utils.rem(spacing.$small) 0;
+}

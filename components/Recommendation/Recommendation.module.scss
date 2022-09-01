@@ -1,4 +1,5 @@
 @use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
 @use '../../styles/colours';
 
@@ -34,6 +35,7 @@
 }
 
 .linkList {
+  @include typography.font-size(-2);
   border-top: 1px solid colours.$recommendation-border;
   display: flex;
   flex-wrap: wrap;
