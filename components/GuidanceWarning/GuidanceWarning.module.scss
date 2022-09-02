@@ -8,4 +8,7 @@
   background: colours.$guidance-warning-background;
   font-weight: bold;
   padding: utils.rem(spacing.$small) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100; // Needs to render above the "back to top" link
 }
