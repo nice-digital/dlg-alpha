@@ -1,7 +1,17 @@
 import Link from "next/link";
+import { type FC, type ReactNode } from "react";
 import styles from "./Recommendation.module.scss";
 
-export const Recommendation = ({
+export interface RecommendationProps {
+	children: ReactNode;
+	id: string;
+	dateUpdated: string;
+	evidenceLink?: string;
+	updateLink?: string;
+	sdmLink?: string;
+}
+
+export const Recommendation: FC<RecommendationProps> = ({
 	children,
 	id,
 	dateUpdated,

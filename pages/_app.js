@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 		<>
 			<Header service="guidance" skipLinkId="content-start" />
 			<GuidanceWarning />
-			<Main>
+			<Main withPadding={false}>
 				<Component {...pageProps} />
 			</Main>
 			<Footer />

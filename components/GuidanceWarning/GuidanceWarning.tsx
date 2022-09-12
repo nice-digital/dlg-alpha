@@ -1,6 +1,7 @@
+import { type FC } from "react";
 import styles from "./GuidanceWarning.module.scss";
 
-export const GuidanceWarning = () => (
+export const GuidanceWarning: FC = () => (
 	<div className={styles.guidanceWarning}>
 		<div className="container">
 			This content does not replace NICE’s current breast cancer guidance. It

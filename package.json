@@ -23,14 +23,20 @@
     "sass": "^1.54.4"
   },
   "devDependencies": {
+    "@types/node": "^18.7.16",
+    "@types/react": "^18.0.19",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3",
     "prettier": "^2.7.1",
     "stylelint": "^14.10.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-config-standard": "^27.0.0"
+    "stylelint-config-standard": "^27.0.0",
+    "typescript": "^4.8.3"
   },
   "browserslist": [
     "extends @nice-digital/browserslist-config"
-  ]
+  ],
+  "volta": {
+    "node": "14.20.0"
+  }
 }
