@@ -1,0 +1,50 @@
+@use '@nice-digital/nds-core/scss/layout';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '../../styles/colours';
+
+.details {
+  background: colours.$accordion-background;
+  border: 1px solid colours.$accordion-border;
+  margin-top: -1px;
+  max-width: layout.$readable-width;
+}
+
+.summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: utils.rem(spacing.$medium);
+
+  &::before {
+    @include typography.font(h2);
+    align-items: center;
+    background: colours.$accordion-border;
+    border-radius: 50%;
+    color: #fff;
+    content: '＋';
+    display: flex;
+    font-family: typography.get-font-family(mono);
+    font-weight: bold;
+    height: utils.rem(spacing.$large);
+    justify-content: center;
+    margin: utils.rem(0 spacing.$medium 0 0);
+    width: utils.rem(spacing.$large);
+  }
+
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    background: colours.$accordion-hover-background;
+  }
+
+  > * {
+    font-family: typography.get-font-family(sans);
+  }
+}

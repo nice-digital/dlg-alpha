@@ -1,0 +1,18 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+@use '../../styles/colours';
+
+.wrapper {
+  margin-bottom: utils.rem(spacing.$medium);
+}
+
+.heading {
+  @include typography.font(h5);
+  background-color: colours.$accordion-group-heading-background;
+  color: colours.$accordion-group-heading-text;
+  display: inline-block;
+  font-family: typography.get-font-family(sans);
+  margin: 0;
+  padding: utils.rem(spacing.$small);
+}

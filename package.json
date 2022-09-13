@@ -13,6 +13,7 @@
     "@nice-digital/design-system": "^4.0.0",
     "@nice-digital/global-nav": "^5.0.890",
     "@nice-digital/nds-breadcrumbs": "^3.0.0",
+    "@sindresorhus/slugify": "^2.1.0",
     "config": "^3.3.7",
     "glob": "^8.0.3",
     "next": "^12.2.5",
