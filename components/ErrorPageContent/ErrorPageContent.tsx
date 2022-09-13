@@ -46,7 +46,8 @@ export const ErrorPageContent: FC<ErrorPageContentProps> = ({
 						<li>Check that the web address has been typed correctly</li>
 						<li>Look for it using search</li>
 						<li>
-							Browse for it from the <a href="/">homepage</a>
+							Browse for it from the{" "}
+							<a href="https://www.nice.org.uk/">homepage</a>
 						</li>
 					</ul>
 					<p>
@@ -61,31 +62,32 @@ export const ErrorPageContent: FC<ErrorPageContentProps> = ({
 					<ul>
 						<li>
 							Explore{" "}
-							<a href="/guidance">
+							<a href="https://www.nice.org.uk/guidance">
 								NICE guidance, quality standards and advice
 							</a>
 							. You can do this by{" "}
-							<a href="/guidance/conditions-and-diseases">
+							<a href="https://www.nice.org.uk/guidance/conditions-and-diseases">
 								category to find a topic
 							</a>
 							, or choose a{" "}
-							<a href="/guidance/published">list organised by date or title</a>.
+							<a href="https://www.nice.org.uk/guidance/published">
+								list organised by date or title
+							</a>
+							.
 						</li>
 						<li>
-							<a href="http://www.evidence.nhs.uk/">Try evidence search</a>.
-							This is our unique index of authoritative, evidence-based
-							information from hundreds of trustworthy and accredited sources.
-						</li>
-						<li>
-							<a href="/about">Visit our about pages</a> to find information
-							about our services, <a href="/about/who-we-are">who we are</a> and{" "}
-							<a href="/about/what-we-do">what we do</a>
+							<a href="https://www.nice.org.uk/about">Visit our about pages</a>{" "}
+							to find information about our services,{" "}
+							<a href="/about/who-we-are">who we are</a> and{" "}
+							<a href="https://www.nice.org.uk/about/what-we-do">what we do</a>
 						</li>
 					</ul>
 					<p>
 						If this is not the first time you have seen this message and believe
 						that there is a serious problem{" "}
-						<a href="/get-involved/contact-us">please contact us directly</a>
+						<a href="https://www.nice.org.uk/get-involved/contact-us">
+							please contact us directly
+						</a>
 					</p>
 				</GridItem>
 			</Grid>
