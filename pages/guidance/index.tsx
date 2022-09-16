@@ -24,7 +24,7 @@ export default function GuidanceIndexPage({
 				<Breadcrumb>NICE guidance</Breadcrumb>
 			</Breadcrumbs>
 
-			<PageHeader heading="NICE guidance" id="content-start" />
+			<PageHeader id="content-start" heading="NICE guidance" />
 
 			<h2>All guidance products</h2>
 

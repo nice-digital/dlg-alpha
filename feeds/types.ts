@@ -4,7 +4,13 @@ export interface PartialProduct {
 	type: "guideline";
 }
 
-export type FeedChanges = null;
+export type FeedChange = {
+	/** Date in yyyy-mm-yy format */
+	completed: string;
+	"change-summary": string;
+};
+
+export type FeedChanges = FeedChange[];
 
 export type FeedMetadata = Record<string, string>;
 
@@ -63,7 +69,7 @@ export interface BaseRecommendationCard<
 	TRecType extends "conversation" | "instruction"
 > {
 	class: "recommendation-card";
-	changes: null;
+	changes: FeedChanges;
 	metadata: FeedMetadata & {
 		"content-id": string;
 		"rec-type": TRecType;

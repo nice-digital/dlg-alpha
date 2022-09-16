@@ -1,32 +1,46 @@
 {
-  "$schema": "NICE-digital-product-schema-v0.1.json",
+  "schema": "NICE-digital-product-schema-v0.2.json",
   "assembly": {
     "type": "guideline",
     "title": "TOPIC Breast Cancer",
-    "changes": null,
+    "changes": [
+      {
+        "completed": "18-08-2022",
+        "change-summary": "First version of topic"
+      }
+    ],
     "metadata": {
-      "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
-      "test": "test"
+      "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
     },
     "nodes": [
       {
         "class": "subtopic",
-        "title": "SUBTOPICx: Treating HER2-positive breast cancer",
-        "changes": null,
+        "title": "SUBTOPICx: Treating HER2-positive breast\n            cancer",
+        "changes": [
+          {
+            "completed": "18-08-2022",
+            "change-summary": "First version of subtopic"
+          }
+        ],
         "metadata": {
           "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer"
         },
-        "content": [{ "": null }],
+        "content": { "": null },
         "nodes": [
           {
             "class": "recspage",
             "title": "RECS PAGE: Adjuvant biological therapies",
-            "content": [{ "": null }],
+            "content": { "": null },
             "nodes": [
               {
                 "class": "rec-conversations-group",
                 "title": "Conversations with patients",
-                "changes": null,
+                "changes": [
+                  {
+                    "completed": "22-08-2022",
+                    "change-summary": "First version of recs page"
+                  }
+                ],
                 "metadata": {
                   "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
                   "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
@@ -35,7 +49,12 @@
                   "recommendations": [
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-15",
+                          "change-summary": "First recommendation card for rec-0005"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0005",
                         "rec-type": "conversation",
@@ -45,14 +64,21 @@
                         "medicine": "_289840724",
                         "services": "nice/Services/ClinicalHealthCare",
                         "service-roles": "nice/ServiceRoles/Practitioner",
-                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy",
-                        "test": "test"
+                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                      },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0005"
                       },
                       "content": { "": null }
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-15",
+                          "change-summary": "First recommendation card for rec-0006"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0006",
                         "rec-type": "conversation",
@@ -62,11 +88,19 @@
                         "services": "nice/Services/ClinicalHealthCare",
                         "service-roles": "nice/ServiceRoles/Practitioner"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0006"
+                      },
                       "content": { "": null }
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-15",
+                          "change-summary": "First recommendation card for rec-0007"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0007",
                         "rec-type": "conversation",
@@ -75,6 +109,9 @@
                         "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
                         "services": "nice/Services/ClinicalHealthCare",
                         "service-roles": "nice/ServiceRoles/Practitioner"
+                      },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0007"
                       },
                       "content": { "": null }
                     }
@@ -88,7 +125,12 @@
                   "recommendations": [
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-15",
+                          "change-summary": "First recommendation card for rec-0001"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0001",
                         "rec-type": "instruction",
@@ -100,6 +142,9 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0001"
+                      },
                       "content": { "": null },
                       "nodes": [
                         {
@@ -115,7 +160,12 @@
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-17",
+                          "change-summary": "First recommendation card for rec-0002"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0002",
                         "rec-type": "instruction",
@@ -127,6 +177,9 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0002"
+                      },
                       "content": { "": null },
                       "nodes": [
                         {
@@ -142,7 +195,12 @@
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-18",
+                          "change-summary": "First recommendation card for rec-0003"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0003",
                         "rec-type": "instruction",
@@ -154,6 +212,9 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0003"
+                      },
                       "content": { "": null },
                       "nodes": [
                         {
@@ -169,7 +230,12 @@
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-19",
+                          "change-summary": "First recommendation card for rec-0012"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0012",
                         "rec-type": "instruction",
@@ -181,6 +247,9 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0012"
+                      },
                       "content": { "": null },
                       "nodes": [
                         {
@@ -196,7 +265,12 @@
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-19",
+                          "change-summary": "First recommendation card for rec-0001"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0011",
                         "rec-type": "instruction",
@@ -208,6 +282,9 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0011"
+                      },
                       "content": { "": null },
                       "nodes": [
                         {
@@ -223,7 +300,12 @@
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-15",
+                          "change-summary": "First recommendation card for rec-0008"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0008",
                         "rec-type": "instruction",
@@ -235,16 +317,26 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0008"
+                      },
                       "content": { "": null },
-                      "nodes": {
-                        "title": "Evidence",
-                        "class": "rec-evidence-group",
-                        "content": { "": null }
-                      }
+                      "nodes": [
+                        {
+                          "title": "Evidence",
+                          "class": "rec-evidence-group",
+                          "content": [{ "": null }]
+                        }
+                      ]
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-15",
+                          "change-summary": "First recommendation card for rec-0008"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0008",
                         "rec-type": "instruction",
@@ -256,16 +348,26 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0008"
+                      },
                       "content": { "": null },
-                      "nodes": {
-                        "title": "Evidence",
-                        "class": "rec-evidence-group",
-                        "content": { "": null }
-                      }
+                      "nodes": [
+                        {
+                          "title": "Evidence",
+                          "class": "rec-evidence-group",
+                          "content": [{ "": null }]
+                        }
+                      ]
                     },
                     {
                       "class": "recommendation-card",
-                      "changes": null,
+                      "changes": [
+                        {
+                          "completed": "2022-08-19",
+                          "change-summary": "First recommendation card for rec-0009"
+                        }
+                      ],
                       "metadata": {
                         "content-id": "rec-0009",
                         "rec-type": "instruction",
@@ -277,12 +379,17 @@
                         "service-roles": "nice/ServiceRoles/Practitioner",
                         "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
                       },
+                      "search": {
+                        "q": "index_s:publication AND content-id_s:rec-0009"
+                      },
                       "content": { "": null },
-                      "nodes": {
-                        "title": "Evidence",
-                        "class": "rec-evidence-group",
-                        "content": { "": null }
-                      }
+                      "nodes": [
+                        {
+                          "title": "Evidence",
+                          "class": "rec-evidence-group",
+                          "content": [{ "": null }]
+                        }
+                      ]
                     }
                   ]
                 }

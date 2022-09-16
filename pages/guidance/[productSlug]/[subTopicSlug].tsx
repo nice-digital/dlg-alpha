@@ -5,8 +5,8 @@ import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { ErrorPageContent } from "../../../components/ErrorPageContent/ErrorPageContent";
 import { getGuidanceProduct } from "../../../feeds/products";
 import { GuidelineAssembly, SubTopicNode } from "../../../feeds/types";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
+import { Link } from "../../../components/Link/Link";
 
 export interface GuidanceProductOverviewProps {
 	product: GuidelineAssembly;
@@ -40,14 +40,23 @@ export default function GuidanceProductOverviewPage({
 
 			<Breadcrumbs>
 				<Breadcrumb to="https://www.nice.org.uk/">NICE</Breadcrumb>
-				<Breadcrumb to="/guidance">NICE guidance</Breadcrumb>
-				<Breadcrumb to={`/guidance/${slugify(product.title)}`}>
+				<Breadcrumb elementType={Link} to="/guidance">
+					NICE guidance
+				</Breadcrumb>
+				<Breadcrumb
+					elementType={Link}
+					to={`/guidance/${slugify(product.title)}`}
+				>
 					{product.title}
 				</Breadcrumb>
 				<Breadcrumb>{subTopic.title}</Breadcrumb>
 			</Breadcrumbs>
 
-			<PageHeader heading={subTopic.title} preheading={product.title} />
+			<PageHeader
+				id="content-start"
+				heading={subTopic.title}
+				preheading={product.title}
+			/>
 
 			<h2>Recs pages</h2>
 

@@ -5,8 +5,8 @@ import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { ErrorPageContent } from "../../components/ErrorPageContent/ErrorPageContent";
 import { getGuidanceProduct } from "../../feeds/products";
 import { GuidelineAssembly } from "../../feeds/types";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
+import { Link } from "../../components/Link/Link";
 
 export interface GuidanceProductOverviewProps {
 	product: GuidelineAssembly;
@@ -31,11 +31,13 @@ export default function GuidanceProductOverviewPage({
 
 			<Breadcrumbs>
 				<Breadcrumb to="https://www.nice.org.uk/">NICE</Breadcrumb>
-				<Breadcrumb to="/guidance">NICE guidance</Breadcrumb>
+				<Breadcrumb elementType={Link} to="/guidance">
+					NICE guidance
+				</Breadcrumb>
 				<Breadcrumb>{product.title}</Breadcrumb>
 			</Breadcrumbs>
 
-			<PageHeader heading={product.title} />
+			<PageHeader id="content-start" heading={product.title} />
 
 			<h2>Sub topics</h2>
 

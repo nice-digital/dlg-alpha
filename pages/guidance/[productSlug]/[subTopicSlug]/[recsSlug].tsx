@@ -10,11 +10,11 @@ import {
 	SubTopicNode,
 	RecGroupClass,
 } from "../../../../feeds/types";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
 import { ElementType } from "react";
 import { ConversationsRecGroup } from "../../../../components/ConversationsRecGroup/ConversationsRecGroup";
 import { InstructionsRecGroup } from "../../../../components/InstructionsRecGroup/InstructionsRecGroup";
+import { Link } from "../../../../components/Link/Link";
 
 const RecGroupComponents: Record<RecGroupClass, ElementType> = {
 	"rec-conversations-group": ConversationsRecGroup,
@@ -65,11 +65,17 @@ export default function GuidanceProductOverviewPage({
 
 			<Breadcrumbs>
 				<Breadcrumb to="https://www.nice.org.uk/">NICE</Breadcrumb>
-				<Breadcrumb to="/guidance">NICE guidance</Breadcrumb>
-				<Breadcrumb to={`/guidance/${slugify(product.title)}`}>
+				<Breadcrumb elementType={Link} to="/guidance">
+					NICE guidance
+				</Breadcrumb>
+				<Breadcrumb
+					elementType={Link}
+					to={`/guidance/${slugify(product.title)}`}
+				>
 					{product.title}
 				</Breadcrumb>
 				<Breadcrumb
+					elementType={Link}
 					to={`/guidance/${slugify(product.title)}/${slugify(subTopic.title)}`}
 				>
 					{subTopic.title}
@@ -77,7 +83,11 @@ export default function GuidanceProductOverviewPage({
 				<Breadcrumb>{recsPage.title}</Breadcrumb>
 			</Breadcrumbs>
 
-			<PageHeader heading={recsPage.title} preheading={subTopic.title} />
+			<PageHeader
+				id="content-start"
+				heading={recsPage.title}
+				preheading={subTopic.title}
+			/>
 
 			{recsPage.nodes.map((recGroup) => {
 				const RecGroupComponent = RecGroupComponents[recGroup.class];
