@@ -6,10 +6,7 @@ export const GuidanceWarning: FC = () => (
 		<div className="container">
 			This content does not replace NICE’s current breast cancer guidance. It
 			has not gone through NICE’s quality assurance processes and is not
-			suitable for use in clinical practice.{" "}
-			<a href="#">
-				After exploring the prototype, please complete our feedback survey
-			</a>
+			suitable for use in clinical practice.
 		</div>
 	</div>
 );
