@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { type FC, type ReactNode } from "react";
 import styles from "./Recommendation.module.scss";
 
@@ -6,9 +7,9 @@ export interface RecommendationProps {
 	children: ReactNode;
 	id: string;
 	dateUpdated: string;
-	evidenceLink?: string;
-	updateLink?: string;
-	sdmLink?: string;
+	evidenceLink?: boolean;
+	updateLink?: boolean;
+	sdmLink?: boolean;
 }
 
 export const Recommendation: FC<RecommendationProps> = ({
@@ -19,6 +20,8 @@ export const Recommendation: FC<RecommendationProps> = ({
 	updateLink,
 	sdmLink,
 }) => {
+	const router = useRouter();
+
 	return (
 		<div className={styles.recommendation}>
 			<div className={styles.id}>{id}</div>
@@ -30,17 +33,21 @@ export const Recommendation: FC<RecommendationProps> = ({
 				<ul className={styles.linkList}>
 					{evidenceLink && (
 						<li>
-							<Link href={evidenceLink}>Evidence</Link>
+							<Link href={`${router.asPath}/${id}/evidence`}>Evidence</Link>
 						</li>
 					)}
 					{updateLink && (
 						<li>
-							<Link href={updateLink}>Update information</Link>
+							<Link href={`${router.asPath}/${id}/updates`}>
+								Update information
+							</Link>
 						</li>
 					)}
 					{sdmLink && (
 						<li>
-							<Link href={sdmLink}>Shared decision making</Link>
+							<Link href={`${router.asPath}/${id}/sdm`}>
+								Shared decision making
+							</Link>
 						</li>
 					)}
 				</ul>

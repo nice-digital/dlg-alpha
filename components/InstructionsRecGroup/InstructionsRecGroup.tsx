@@ -14,7 +14,14 @@ export const InstructionsRecGroup: FC<InstructionsRecGroupProps> = ({
 			<h2>{title}</h2>
 
 			{content.recommendations.map((rec, i) => (
-				<Recommendation key={i} id="todo" dateUpdated="todo">
+				<Recommendation
+					key={i}
+					id={rec.metadata["content-id"]}
+					dateUpdated={rec.changes[0].completed}
+					evidenceLink={true}
+					updateLink={true}
+					sdmLink={true}
+				>
 					{JSON.stringify(rec, null, 2)}
 				</Recommendation>
 			))}
