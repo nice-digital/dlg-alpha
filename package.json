@@ -11,7 +11,7 @@
   "dependencies": {
     "@nice-digital/browserslist-config": "^2.0.1",
     "@nice-digital/design-system": "^4.0.0",
-    "@nice-digital/global-nav": "^5.0.890",
+    "@nice-digital/global-nav": "^5.0.909",
     "@nice-digital/nds-breadcrumbs": "^3.0.0",
     "@nice-digital/nds-horizontal-nav": "^3.0.2",
     "@sindresorhus/slugify": "^2.1.0",
