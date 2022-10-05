@@ -1,15 +1,19 @@
-import slugify from "@sindresorhus/slugify";
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+
+import slugify from "@sindresorhus/slugify";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { PageHeader } from "@nice-digital/nds-page-header";
+import { Grid, GridItem } from "@nice-digital/nds-grid";
+
+import { Contents, type ContentsItem } from "@/components/Contents/Contents";
 import { Link } from "@/components/Link/Link";
-import { getGuidanceProduct } from "@/feeds/products";
-import { GuidelineAssembly, RecsPageNode, SubTopicNode } from "@/feeds/types";
 import {
 	RecHorizontalNav,
 	RecHorizontalNavOption,
 } from "@/components/RecHorizontalNav/RecHorizontalNav";
+import { getGuidanceProduct } from "@/feeds/products";
+import { GuidelineAssembly, RecsPageNode, SubTopicNode } from "@/feeds/types";
 
 export interface RecsPageEvidenceProps {
 	product: GuidelineAssembly;
@@ -22,6 +26,18 @@ export default function recommendationEvidencePage({
 	subTopic,
 	recsPage,
 }: RecsPageEvidenceProps) {
+	const contentsItems: ContentsItem[] = [
+		{
+			title: "Why we made this recommendation",
+			link: "/",
+			current: true,
+		},
+		{
+			title: "Evidence and committee discussion",
+			link: "https://example.com",
+		},
+	];
+
 	return (
 		<>
 			<NextSeo title="Evidence page"></NextSeo>
@@ -58,7 +74,14 @@ export default function recommendationEvidencePage({
 
 			<RecHorizontalNav currentLink={RecHorizontalNavOption.Evidence} />
 
-			<p>TODO: Evidence page content...</p>
+			<Grid gutter="loose">
+				<GridItem cols={12} md={4} lg={3}>
+					<Contents items={contentsItems} />
+				</GridItem>
+				<GridItem cols={12} md={8} lg={9}>
+					<p>TODO: Evidence page content...</p>
+				</GridItem>
+			</Grid>
 		</>
 	);
 }
