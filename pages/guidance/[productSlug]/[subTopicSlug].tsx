@@ -2,11 +2,11 @@ import slugify from "@sindresorhus/slugify";
 import { GetServerSideProps } from "next";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
-import { ErrorPageContent } from "../../../components/ErrorPageContent/ErrorPageContent";
-import { getGuidanceProduct } from "../../../feeds/products";
-import { GuidelineAssembly, SubTopicNode } from "../../../feeds/types";
+import { ErrorPageContent } from "@/components/ErrorPageContent/ErrorPageContent";
+import { getGuidanceProduct } from "@/feeds/products";
+import { GuidelineAssembly, SubTopicNode } from "@/feeds/types";
 import { NextSeo } from "next-seo";
-import { Link } from "../../../components/Link/Link";
+import { Link } from "@/components/Link/Link";
 
 export interface GuidanceProductOverviewProps {
 	product: GuidelineAssembly;
