@@ -60,7 +60,7 @@ export default function recommendationSDMPage({
 				lead={recsPage.title}
 			/>
 
-			<RecHorizontalNav id="SomeID" currentLink={RecHorizontalNavOption.SDM} />
+			<RecHorizontalNav currentLink={RecHorizontalNavOption.SDM} />
 
 			<p>TODO: Shared Decision Making page content...</p>
 		</>

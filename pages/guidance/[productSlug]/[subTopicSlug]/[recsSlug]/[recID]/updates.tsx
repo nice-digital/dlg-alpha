@@ -60,10 +60,7 @@ export default function recommendationUpdatesPage({
 				lead={recsPage.title}
 			/>
 
-			<RecHorizontalNav
-				id="SomeID"
-				currentLink={RecHorizontalNavOption.Updates}
-			/>
+			<RecHorizontalNav currentLink={RecHorizontalNavOption.Updates} />
 
 			<p>TODO: Updates page content...</p>
 		</>

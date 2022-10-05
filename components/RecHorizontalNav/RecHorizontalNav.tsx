@@ -5,7 +5,6 @@ import {
 } from "@nice-digital/nds-horizontal-nav";
 
 export interface RecHorizontalNavProps {
-	id: string;
 	currentLink: RecHorizontalNavOption;
 }
 
@@ -16,7 +15,6 @@ export enum RecHorizontalNavOption {
 }
 
 export const RecHorizontalNav: FC<RecHorizontalNavProps> = ({
-	id,
 	currentLink,
 }) => {
 	return (

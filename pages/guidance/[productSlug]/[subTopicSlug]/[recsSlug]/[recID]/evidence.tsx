@@ -56,10 +56,7 @@ export default function recommendationEvidencePage({
 
 			<PageHeader id="content-start" heading="Evidence" lead={recsPage.title} />
 
-			<RecHorizontalNav
-				id="SomeID"
-				currentLink={RecHorizontalNavOption.Evidence}
-			/>
+			<RecHorizontalNav currentLink={RecHorizontalNavOption.Evidence} />
 
 			<p>TODO: Evidence page content...</p>
 		</>
