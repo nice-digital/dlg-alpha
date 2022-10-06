@@ -11,33 +11,33 @@
   "dependencies": {
     "@nice-digital/browserslist-config": "^2.0.1",
     "@nice-digital/design-system": "^4.0.4",
-    "@nice-digital/global-nav": "^5.0.909",
-    "@nice-digital/nds-breadcrumbs": "^3.0.0",
+    "@nice-digital/global-nav": "^5.0.910",
+    "@nice-digital/nds-breadcrumbs": "^3.0.2",
     "@nice-digital/nds-horizontal-nav": "^3.0.2",
     "@nice-digital/nds-page-header": "^3.0.2",
-    "@sindresorhus/slugify": "^2.1.0",
-    "config": "^3.3.7",
+    "@sindresorhus/slugify": "^2.1.1",
+    "config": "^3.3.8",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
-    "next": "^12.2.5",
+    "next": "^12.3.1",
     "next-plugin-node-config": "^1.0.2",
     "next-seo": "^5.5.0",
     "next-transpile-modules": "^9.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.54.4"
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^18.7.16",
-    "@types/react": "^18.0.19",
+    "@types/node": "^18.8.3",
+    "@types/react": "^18.0.21",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3",
     "prettier": "^2.7.1",
-    "stylelint": "^14.10.0",
+    "stylelint": "^14.13.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^27.0.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   },
   "browserslist": [
     "extends @nice-digital/browserslist-config"
