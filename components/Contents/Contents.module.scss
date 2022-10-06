@@ -1,0 +1,39 @@
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
+.heading {
+  @include typography.font(h5);
+  font-family: typography.get-font-family('sans');
+  margin-top: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: flex;
+
+    &::before {
+      background: #333;
+      content: '';
+      display: block;
+      height: 1px; // utils.rem causes a rounding error here for some reason, so we're sticking to pixels
+      margin: utils.rem(12px 12px 0 0);
+      width: utils.rem(spacing.$medium);
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.current {
+  font-weight: bold;
+}

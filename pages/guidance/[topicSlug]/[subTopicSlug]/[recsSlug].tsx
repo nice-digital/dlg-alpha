@@ -2,19 +2,18 @@ import slugify from "@sindresorhus/slugify";
 import { GetServerSideProps } from "next";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
-import { ErrorPageContent } from "../../../../components/ErrorPageContent/ErrorPageContent";
-import { getTopic } from "../../../../feeds/products";
+import { getTopic } from "@/feeds/products";
 import {
 	TopicAssembly,
 	RecsPageNode,
 	SubTopicNode,
 	RecGroupClass,
-} from "../../../../feeds/types";
+} from "@/feeds/types";
 import { NextSeo } from "next-seo";
 import { ElementType } from "react";
-import { ConversationsRecGroup } from "../../../../components/ConversationsRecGroup/ConversationsRecGroup";
-import { InstructionsRecGroup } from "../../../../components/InstructionsRecGroup/InstructionsRecGroup";
-import { Link } from "../../../../components/Link/Link";
+import { ConversationsRecGroup } from "@/components/ConversationsRecGroup/ConversationsRecGroup";
+import { InstructionsRecGroup } from "@/components/InstructionsRecGroup/InstructionsRecGroup";
+import { Link } from "@/components/Link/Link";
 
 const RecGroupComponents: Record<RecGroupClass, ElementType> = {
 	"rec-conversations-group": ConversationsRecGroup,

@@ -1,13 +1,27 @@
+import slugify from "@sindresorhus/slugify";
+import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { PageHeader } from "@nice-digital/nds-page-header";
-import { Link } from "../../../../../../components/Link/Link";
+import { Link } from "@/components/Link/Link";
+import { getGuidanceProduct } from "@/feeds/products";
+import { GuidelineAssembly, RecsPageNode, SubTopicNode } from "@/feeds/types";
 import {
 	RecHorizontalNav,
 	RecHorizontalNavOption,
-} from "../../../../../../components/RecHorizontalNav/RecHorizontalNav";
+} from "@/components/RecHorizontalNav/RecHorizontalNav";
 
-export default function recommendationUpdatesPage() {
+export interface RecsPageUpdatesProps {
+	product: GuidelineAssembly;
+	subTopic: SubTopicNode;
+	recsPage: RecsPageNode;
+}
+
+export default function recommendationUpdatesPage({
+	product,
+	subTopic,
+	recsPage,
+}: RecsPageUpdatesProps) {
 	return (
 		<>
 			<NextSeo title="Updates page"></NextSeo>
@@ -17,21 +31,66 @@ export default function recommendationUpdatesPage() {
 				<Breadcrumb elementType={Link} to="/guidance">
 					NICE guidance
 				</Breadcrumb>
-				<Breadcrumb>TODO: Updates breadcrumbs</Breadcrumb>
+				<Breadcrumb
+					elementType={Link}
+					to={`/guidance/${slugify(product.title)}`}
+				>
+					{product.title}
+				</Breadcrumb>
+				<Breadcrumb
+					elementType={Link}
+					to={`/guidance/${slugify(product.title)}/${slugify(subTopic.title)}`}
+				>
+					{subTopic.title}
+				</Breadcrumb>
+				<Breadcrumb
+					elementType={Link}
+					to={`/guidance/${slugify(product.title)}/${slugify(
+						subTopic.title
+					)}/${slugify(recsPage.title)}`}
+				>
+					{recsPage.title}
+				</Breadcrumb>
+				<Breadcrumb>Evidence</Breadcrumb>
 			</Breadcrumbs>
 
 			<PageHeader
 				id="content-start"
 				heading="Update information"
-				lead="TODO: Adjuvant trastuzumab for early HER2-positive breast cancer with T1c and above tumours"
+				lead={recsPage.title}
 			/>
 
-			<RecHorizontalNav
-				id="SomeID"
-				currentLink={RecHorizontalNavOption.Updates}
-			/>
+			<RecHorizontalNav currentLink={RecHorizontalNavOption.Updates} />
 
 			<p>TODO: Updates page content...</p>
 		</>
 	);
 }
+
+export const getServerSideProps: GetServerSideProps = async ({
+	params,
+	res,
+}) => {
+	const { productSlug, subTopicSlug, recsSlug } = params;
+	const product = await getGuidanceProduct(productSlug as string);
+
+	if (!product) res.statusCode = 404;
+
+	const subTopic = product
+		? product.nodes.find((n) => slugify(n.title) === subTopicSlug)
+		: null;
+
+	if (!subTopic) res.statusCode = 404;
+
+	const recsPage = subTopic
+		? subTopic.nodes.find(
+				(n) => n.class === "recspage" && slugify(n.title) === recsSlug
+		  )
+		: null;
+
+	if (!recsPage) res.statusCode = 404;
+
+	return {
+		props: { product, productSlug, subTopic, subTopicSlug, recsPage, recsSlug },
+	};
+};
