@@ -1,3 +1,8 @@
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
+
 @forward '@nice-digital/design-system/scss/base' with (
   $include-spacing-modifiers: false,
   $output-text-classes: false,
@@ -6,4 +11,29 @@
 
 footer {
   margin-top: 0 !important;
+}
+
+.note.warning {
+  background-color: colours.$caution-background;
+  border: 1px solid colours.$caution;
+  margin-bottom: utils.rem(spacing.$medium);
+  padding: utils.rem(spacing.$medium);
+
+  &::before {
+    color: colours.$caution;
+    content: '\26A0';
+    float: left;
+    font-size: utils.rem(typography.get-font-size(h3));
+    font-weight: normal;
+    line-height: 1;
+    margin-right: utils.rem(spacing.$medium);
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
