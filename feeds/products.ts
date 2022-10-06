@@ -1,17 +1,13 @@
-import { type GuidelineAssembly, type PartialProduct } from "./types";
-import product from "./__data__/indexed-assmebly.json";
+import { type TopicAssembly, type PartialTopic } from "./types";
+import topic from "./__data__/topic.json";
 
-export const getAllGuidanceProducts = async (): Promise<PartialProduct[]> => [
+export const getAllGuidanceTopics = async (): Promise<PartialTopic[]> => [
 	{
-		title: "TOPIC Breast Cancer",
-		slug: "topic-breast-cancer",
-		type: "guideline",
+		title: "Breast cancer",
+		slug: "breast-cancer",
+		type: "topic",
 	},
 ];
 
-export const getGuidanceProduct = async (
-	slug: string
-): Promise<GuidelineAssembly | null> =>
-	slug === "topic-breast-cancer"
-		? (product.assembly as GuidelineAssembly)
-		: null;
+export const getTopic = async (slug: string): Promise<TopicAssembly | null> =>
+	slug === "breast-cancer" ? (topic.assembly as TopicAssembly) : null;

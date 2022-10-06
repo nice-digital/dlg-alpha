@@ -1,0 +1,1506 @@
+{
+    "assembly": {
+        "type": "topic",
+        "title": "TOPIC Breast Cancer",
+        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"},
+        "content": {
+            "id": "topicref:1;14:86",
+            "class": "overview",
+            "debugDITATag": "topicref",
+            "title": "Breast Cancer",
+            "href": "f6b0de83-b2a7-454f-a433-460fac150078",
+            "api-content": "/v3/content/f6b0de83-b2a7-454f-a433-460fac150078",
+            "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+        },
+        "nodes": {
+            "id": "topichead:1;5:37",
+            "class": "subtopic",
+            "debugDITATag": "topichead",
+            "title": "SUBTOPICx: Treating HER2-positive breast cancer",
+            "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer"},
+            "changes": [
+                {"remove": null},
+                {
+                    "completed": "18-08-2022",
+                    "change-summary": "First version of subtopic"
+                }
+            ],
+            "content": {
+                "id": "topicref:1;17:109",
+                "class": "overview",
+                "debugDITATag": "topicref",
+                "title": "Treating early HER2-positive invasive breast cancer",
+                "href": "1f14ad69-0602-4631-99c8-dd201ed0bb63",
+                "api-content": "/v3/content/1f14ad69-0602-4631-99c8-dd201ed0bb63",
+                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+            },
+            "nodes": {
+                "id": "topichead:1;6:39",
+                "class": "recspage",
+                "debugDITATag": "topichead",
+                "title": "RECS PAGE: Adjuvant biological therapies",
+                "content": {
+                    "id": "topicref:1;10:133",
+                    "class": "overview",
+                    "debugDITATag": "topicref",
+                    "title": "Adjuvant biological therapies",
+                    "href": "51744837-ba4e-4866-a16f-f9697ed0fa4c",
+                    "api-content": "/v3/content/51744837-ba4e-4866-a16f-f9697ed0fa4c",
+                    "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                },
+                "nodes": [
+                    {
+                        "id": "topicgroup:1;11:59",
+                        "class": "rec-conversations-group",
+                        "debugDITATag": "topicgroup",
+                        "title": null,
+                        "nodes": {
+                            "id": "topichead:2;12:24",
+                            "class": null,
+                            "debugDITATag": "topichead",
+                            "title": "Conversations with patients",
+                            "metadata": {
+                                "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                            },
+                            "changes": [
+                                {"remove": null},
+                                {
+                                    "completed": "22-08-2022",
+                                    "change-summary": "First version of recs page"
+                                }
+                            ],
+                            "nodes": [
+                                {
+                                    "id": "topicgroup:1;5:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0005",
+                                        "rec-type": "conversation",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                        "medicine": "_289840724",
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner",
+                                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0005"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-15",
+                                            "change-summary": "First recommendation card for rec-0005"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;31:153",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Explaining the risks and benefits of trastuzumab",
+                                        "href": "6778eef9-f3fd-4f91-8e0b-cbafa6afc008",
+                                        "api-content": "/v3/content/6778eef9-f3fd-4f91-8e0b-cbafa6afc008",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    }
+                                },
+                                {
+                                    "id": "topicgroup:1;5:51",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0006",
+                                        "rec-type": "conversation",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0006"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-15",
+                                            "change-summary": "First recommendation card for rec-0006"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;29:174",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Mental health support for people with breast cancer",
+                                        "href": "470b4ffe-ea29-4a67-8b36-ca2f2c5caa79",
+                                        "api-content": "/v3/content/470b4ffe-ea29-4a67-8b36-ca2f2c5caa79",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    }
+                                },
+                                {
+                                    "id": "topicgroup:1;5:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0007",
+                                        "rec-type": "conversation",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0007"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-15",
+                                            "change-summary": "First recommendation card for rec-0007"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;29:152",
+                                        "class": "recommendation",
+                                        "debugDITATag": "topicref",
+                                        "title": "Information that meets people\u2019s needs",
+                                        "href": "3a1df9b8-c745-4d66-aaf9-ad7a3177d9f3",
+                                        "api-content": "/v3/content/3a1df9b8-c745-4d66-aaf9-ad7a3177d9f3",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "topicgroup:2;29:58",
+                        "class": "rec-instructions-group",
+                        "debugDITATag": "topicgroup",
+                        "title": null,
+                        "nodes": [
+                            {
+                                "id": "topichead:3;30:24",
+                                "class": null,
+                                "debugDITATag": "topichead",
+                                "title": "For tumours that are T1c and above",
+                                "nodes": {
+                                    "id": "topicgroup:1;5:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0001",
+                                        "rec-type": "instruction",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                        "medicine": "_289840724",
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner",
+                                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0001"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-15",
+                                            "change-summary": "First recommendation card for rec-0001"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;31:132",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Tumour that is larger than 1 cm (T1c and above)",
+                                        "href": "a2e5f692-4cb8-4d70-974e-672e8a22643c",
+                                        "api-content": "/v3/content/a2e5f692-4cb8-4d70-974e-672e8a22643c",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    },
+                                    "nodes": [
+                                        {
+                                            "id": "topicgroup:2;32:50",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;33:31",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence",
+                                                "content": [
+                                                    {
+                                                        "id": "topicref:2;37:128",
+                                                        "class": "rationale-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Rationale",
+                                                        "href": "8cd8fd7a-bd6a-4b61-a10f-ea86b7c7b89d",
+                                                        "api-content": "/v3/content/8cd8fd7a-bd6a-4b61-a10f-ea86b7c7b89d",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                    },
+                                                    {
+                                                        "id": "topicref:3;40:127",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Clinical evidence",
+                                                        "href": "b14ded4e-69fe-466d-b552-85189aa14568",
+                                                        "api-content": "/v3/content/b14ded4e-69fe-466d-b552-85189aa14568",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"},
+                                                        "content": [
+                                                            {
+                                                                "id": "topicref:4;41:155",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "Disease free survival at 1 - year follow up",
+                                                                "href": "9f3cdfe3-40cc-466f-9a2d-9668cf1343d2",
+                                                                "api-content": "/v3/content/9f3cdfe3-40cc-466f-9a2d-9668cf1343d2",
+                                                                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                            },
+                                                            {
+                                                                "id": "topicref:5;42:123",
+                                                                "class": null,
+                                                                "debugDITATag": "topicref",
+                                                                "title": "Overall survival at 1 - year follow up",
+                                                                "href": "39cfcdbb-90dc-4ee5-91e8-551c4850c240",
+                                                                "api-content": "/v3/content/39cfcdbb-90dc-4ee5-91e8-551c4850c240",
+                                                                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "id": "topicref:6;44:125",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Adverse events",
+                                                        "href": "acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                        "api-content": "/v3/content/acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"},
+                                                        "content": [
+                                                            {
+                                                                "id": "topicref:7;45:131",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "At 1-year follow up",
+                                                                "href": "2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                                "api-content": "/v3/content/2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                            },
+                                                            {
+                                                                "id": "topicref:8;46:132",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "At 2 -year follow up",
+                                                                "href": "764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                                "api-content": "/v3/content/764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "id": "topicref:9;48:127",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Economic evidence",
+                                                        "href": "14308ab3-647a-4007-815c-2b605e1b5a50",
+                                                        "api-content": "/v3/content/14308ab3-647a-4007-815c-2b605e1b5a50",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                    },
+                                                    {
+                                                        "id": "topicref:10;49:130",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Cost utility studies",
+                                                        "href": "42af8b80-26ed-418b-b569-5947b243c365",
+                                                        "api-content": "/v3/content/42af8b80-26ed-418b-b569-5947b243c365",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                    },
+                                                    {
+                                                        "id": "topicref:11;50:137",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Cost effectiveness analyses",
+                                                        "href": "04c5fc95-4e8f-4e59-8d52-e880a313d383",
+                                                        "api-content": "/v3/content/04c5fc95-4e8f-4e59-8d52-e880a313d383",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                    },
+                                                    {
+                                                        "id": "topicref:12;51:136",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Shorter treatment duration",
+                                                        "href": "31d64fa2-8c2f-4aff-becd-a46f3dcb4b9f",
+                                                        "api-content": "/v3/content/31d64fa2-8c2f-4aff-becd-a46f3dcb4b9f",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                    },
+                                                    {
+                                                        "id": "topicref:13;52:125",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Related content",
+                                                        "href": "31f461ce-1969-4caf-b0fc-b989dc4af471",
+                                                        "api-content": "/v3/content/31f461ce-1969-4caf-b0fc-b989dc4af471",
+                                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": "topicgroup:3;55:59",
+                                            "class": "rec-service-user-info-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:2;56:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Service User information"
+                                            },
+                                            "content": [
+                                                {
+                                                    "id": "topicref:14;61:127",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Overview",
+                                                    "href": "084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "api-content": "/v3/content/084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                },
+                                                {
+                                                    "id": "topicref:15;62:141",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What are the benefits?",
+                                                    "href": "a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "api-content": "/v3/content/a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                },
+                                                {
+                                                    "id": "topicref:16;63:151",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What does the treatment involve?",
+                                                    "href": "7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "api-content": "/v3/content/7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "topichead:4;36:24",
+                                "class": null,
+                                "debugDITATag": "topichead",
+                                "title": "For tumours that are T1a or T1b",
+                                "nodes": {
+                                    "id": "topicgroup:1;5:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0002",
+                                        "rec-type": "instruction",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                        "medicine": "_289840724",
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner",
+                                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0002"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-17",
+                                            "change-summary": "First recommendation card for rec-0002"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;31:114",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Tumour that is larger than 0.1 cm but smaller than 1 cm (T1a or T1b)",
+                                        "href": "3b204106-8abd-4b8d-8536-8e8788e9b7aa",
+                                        "api-content": "/v3/content/3b204106-8abd-4b8d-8536-8e8788e9b7aa",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    },
+                                    "nodes": [
+                                        {
+                                            "id": "topicgroup:2;32:50",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;33:31",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence",
+                                                "content": [
+                                                    {
+                                                        "id": "topicref:2;37:128",
+                                                        "class": "rationale-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Rationale",
+                                                        "href": "8cd8fd7a-bd6a-4b61-a10f-ea86b7c7b89d",
+                                                        "api-content": "/v3/content/8cd8fd7a-bd6a-4b61-a10f-ea86b7c7b89d",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:3;40:127",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Clinical evidence",
+                                                        "href": "b14ded4e-69fe-466d-b552-85189aa14568",
+                                                        "api-content": "/v3/content/b14ded4e-69fe-466d-b552-85189aa14568",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        },
+                                                        "content": [
+                                                            {
+                                                                "id": "topicref:4;41:155",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "Disease free survival at 1 - year follow up",
+                                                                "href": "9f3cdfe3-40cc-466f-9a2d-9668cf1343d2",
+                                                                "api-content": "/v3/content/9f3cdfe3-40cc-466f-9a2d-9668cf1343d2",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "topicref:5;42:123",
+                                                                "class": null,
+                                                                "debugDITATag": "topicref",
+                                                                "title": "Overall survival at 1 - year follow up",
+                                                                "href": "39cfcdbb-90dc-4ee5-91e8-551c4850c240",
+                                                                "api-content": "/v3/content/39cfcdbb-90dc-4ee5-91e8-551c4850c240",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "id": "topicref:6;44:125",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Adverse events",
+                                                        "href": "acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                        "api-content": "/v3/content/acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        },
+                                                        "content": [
+                                                            {
+                                                                "id": "topicref:7;45:131",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "At 1-year follow up",
+                                                                "href": "2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                                "api-content": "/v3/content/2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "topicref:8;46:132",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "At 2 -year follow up",
+                                                                "href": "764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                                "api-content": "/v3/content/764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "id": "topicref:9;48:127",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Economic evidence",
+                                                        "href": "14308ab3-647a-4007-815c-2b605e1b5a50",
+                                                        "api-content": "/v3/content/14308ab3-647a-4007-815c-2b605e1b5a50",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:10;49:130",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Cost utility studies",
+                                                        "href": "42af8b80-26ed-418b-b569-5947b243c365",
+                                                        "api-content": "/v3/content/42af8b80-26ed-418b-b569-5947b243c365",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:11;50:137",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Cost effectiveness analyses",
+                                                        "href": "04c5fc95-4e8f-4e59-8d52-e880a313d383",
+                                                        "api-content": "/v3/content/04c5fc95-4e8f-4e59-8d52-e880a313d383",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:12;51:136",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Shorter treatment duration",
+                                                        "href": "31d64fa2-8c2f-4aff-becd-a46f3dcb4b9f",
+                                                        "api-content": "/v3/content/31d64fa2-8c2f-4aff-becd-a46f3dcb4b9f",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:13;52:125",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Related content",
+                                                        "href": "31f461ce-1969-4caf-b0fc-b989dc4af471",
+                                                        "api-content": "/v3/content/31f461ce-1969-4caf-b0fc-b989dc4af471",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": "topicgroup:3;55:59",
+                                            "class": "rec-service-user-info-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:2;56:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Service User information"
+                                            },
+                                            "content": [
+                                                {
+                                                    "id": "topicref:14;61:127",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Overview",
+                                                    "href": "084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "api-content": "/v3/content/084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:15;62:141",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What are the benefits?",
+                                                    "href": "a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "api-content": "/v3/content/a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:16;63:151",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What does the treatment involve?",
+                                                    "href": "7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "api-content": "/v3/content/7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "topichead:5;42:24",
+                                "class": null,
+                                "debugDITATag": "topichead",
+                                "title": "For tumours of all sizes",
+                                "nodes": {
+                                    "id": "topicgroup:1;6:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0003",
+                                        "rec-type": "instruction",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                        "medicine": "_289840724",
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner",
+                                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0003"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-18",
+                                            "change-summary": "First recommendation card for rec-0003"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;32:172",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Take into account any other conditions people may have that could be affected by starting treatment with trastuzumab.",
+                                        "href": "1f11b0db-e73e-4f23-ba32-54f1dba5ca11",
+                                        "api-content": "/v3/content/1f11b0db-e73e-4f23-ba32-54f1dba5ca11",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    },
+                                    "nodes": [
+                                        {
+                                            "id": "topicgroup:2;35:50",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;36:31",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence",
+                                                "content": [
+                                                    {
+                                                        "id": "topicref:2;40:128",
+                                                        "class": "rationale-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Rationale",
+                                                        "href": "8cd8fd7a-bd6a-4b61-a10f-ea86b7c7b89d",
+                                                        "api-content": "/v3/content/8cd8fd7a-bd6a-4b61-a10f-ea86b7c7b89d",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:3;43:127",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Clinical evidence",
+                                                        "href": "b14ded4e-69fe-466d-b552-85189aa14568",
+                                                        "api-content": "/v3/content/b14ded4e-69fe-466d-b552-85189aa14568",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        },
+                                                        "content": [
+                                                            {
+                                                                "id": "topicref:4;44:155",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "Disease free survival at 1 - year follow up",
+                                                                "href": "9f3cdfe3-40cc-466f-9a2d-9668cf1343d2",
+                                                                "api-content": "/v3/content/9f3cdfe3-40cc-466f-9a2d-9668cf1343d2",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "topicref:5;45:123",
+                                                                "class": null,
+                                                                "debugDITATag": "topicref",
+                                                                "title": "Overall survival at 1 - year follow up",
+                                                                "href": "39cfcdbb-90dc-4ee5-91e8-551c4850c240",
+                                                                "api-content": "/v3/content/39cfcdbb-90dc-4ee5-91e8-551c4850c240",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "id": "topicref:6;47:125",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Adverse events",
+                                                        "href": "acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                        "api-content": "/v3/content/acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        },
+                                                        "content": [
+                                                            {
+                                                                "id": "topicref:7;48:131",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "At 1-year follow up",
+                                                                "href": "2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                                "api-content": "/v3/content/2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": "topicref:8;49:132",
+                                                                "class": "evidence-ref",
+                                                                "debugDITATag": "topicref",
+                                                                "title": "At 2 -year follow up",
+                                                                "href": "764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                                "api-content": "/v3/content/764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                                "metadata": {
+                                                                    "condition-disease": [
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "id": "topicref:9;51:127",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Economic evidence",
+                                                        "href": "14308ab3-647a-4007-815c-2b605e1b5a50",
+                                                        "api-content": "/v3/content/14308ab3-647a-4007-815c-2b605e1b5a50",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:10;52:130",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Cost utility studies",
+                                                        "href": "42af8b80-26ed-418b-b569-5947b243c365",
+                                                        "api-content": "/v3/content/42af8b80-26ed-418b-b569-5947b243c365",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:11;53:137",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Cost effectiveness analyses",
+                                                        "href": "04c5fc95-4e8f-4e59-8d52-e880a313d383",
+                                                        "api-content": "/v3/content/04c5fc95-4e8f-4e59-8d52-e880a313d383",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:12;54:136",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Shorter treatment duration",
+                                                        "href": "31d64fa2-8c2f-4aff-becd-a46f3dcb4b9f",
+                                                        "api-content": "/v3/content/31d64fa2-8c2f-4aff-becd-a46f3dcb4b9f",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "topicref:13;55:125",
+                                                        "class": "evidence-ref",
+                                                        "debugDITATag": "topicref",
+                                                        "title": "Related content",
+                                                        "href": "31f461ce-1969-4caf-b0fc-b989dc4af471",
+                                                        "api-content": "/v3/content/31f461ce-1969-4caf-b0fc-b989dc4af471",
+                                                        "metadata": {
+                                                            "condition-disease": [
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": "topicgroup:3;58:59",
+                                            "class": "rec-service-user-info-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:2;59:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Service User information"
+                                            },
+                                            "content": [
+                                                {
+                                                    "id": "topicref:14;64:127",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Overview",
+                                                    "href": "084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "api-content": "/v3/content/084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:15;65:141",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What are the benefits?",
+                                                    "href": "a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "api-content": "/v3/content/a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:16;66:151",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What does the treatment involve?",
+                                                    "href": "7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "api-content": "/v3/content/7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "topichead:6;48:24",
+                                "class": null,
+                                "debugDITATag": "topichead",
+                                "title": "Monitoring heart function",
+                                "nodes": {
+                                    "id": "topicgroup:1;6:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0012",
+                                        "rec-type": "instruction",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                        "medicine": [
+                                            "_289840724",
+                                            "_271543875"
+                                        ],
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner",
+                                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0012"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-19",
+                                            "change-summary": "First recommendation card for rec-0012"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;33:143",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Monitoring heart function",
+                                        "href": "b3109aeb-ff26-4602-8679-67184d6e13e8",
+                                        "api-content": "/v3/content/b3109aeb-ff26-4602-8679-67184d6e13e8",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    },
+                                    "nodes": [
+                                        {
+                                            "id": "topicgroup:2;36:50",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;37:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence",
+                                                "content": {
+                                                    "id": "topicref:2;41:124",
+                                                    "class": "evidence-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Adverse events",
+                                                    "href": "acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                    "api-content": "/v3/content/acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    },
+                                                    "content": [
+                                                        {
+                                                            "id": "topicref:3;42:131",
+                                                            "class": "evidence-ref",
+                                                            "debugDITATag": "topicref",
+                                                            "title": "At 1-year follow up",
+                                                            "href": "2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                            "api-content": "/v3/content/2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                            "metadata": {
+                                                                "condition-disease": [
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "id": "topicref:4;43:132",
+                                                            "class": "evidence-ref",
+                                                            "debugDITATag": "topicref",
+                                                            "title": "At 2 -year follow up",
+                                                            "href": "764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                            "api-content": "/v3/content/764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                            "metadata": {
+                                                                "condition-disease": [
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "topicgroup:3;47:59",
+                                            "class": "rec-service-user-info-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:2;48:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Service User information"
+                                            },
+                                            "content": [
+                                                {
+                                                    "id": "topicref:5;53:127",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Overview",
+                                                    "href": "084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "api-content": "/v3/content/084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:6;54:141",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What are the benefits?",
+                                                    "href": "a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "api-content": "/v3/content/a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:7;55:151",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What does the treatment involve?",
+                                                    "href": "7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "api-content": "/v3/content/7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "topichead:7;54:24",
+                                "class": null,
+                                "debugDITATag": "topichead",
+                                "title": "Heart conditions to be aware of",
+                                "nodes": {
+                                    "id": "topicgroup:1;6:49",
+                                    "class": "recommendation-card",
+                                    "debugDITATag": "topicgroup",
+                                    "title": null,
+                                    "metadata": {
+                                        "content-id": "rec-0011",
+                                        "rec-type": "instruction",
+                                        "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                        "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                        "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                        "medicine": [
+                                            "_289840724",
+                                            "_271543875"
+                                        ],
+                                        "services": "nice/Services/ClinicalHealthCare",
+                                        "service-roles": "nice/ServiceRoles/Practitioner",
+                                        "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                    },
+                                    "search": {"q": "index_s:publication AND content-id_s:rec-0011"},
+                                    "changes": [
+                                        {"remove": null},
+                                        {
+                                            "completed": "2022-08-19",
+                                            "change-summary": "First recommendation card for rec-0001"
+                                        }
+                                    ],
+                                    "content": {
+                                        "id": "topicref:1;33:149",
+                                        "class": "recommendation-ref",
+                                        "debugDITATag": "topicref",
+                                        "title": "Heart conditions to be aware of",
+                                        "href": "b9a2ce79-28eb-433d-85a6-aadb7735a21a",
+                                        "api-content": "/v3/content/b9a2ce79-28eb-433d-85a6-aadb7735a21a",
+                                        "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                    },
+                                    "nodes": [
+                                        {
+                                            "id": "topicgroup:2;36:50",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;37:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence",
+                                                "content": {
+                                                    "id": "topicref:2;41:124",
+                                                    "class": "evidence-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Adverse events",
+                                                    "href": "acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                    "api-content": "/v3/content/acf79553-cd6f-4898-86c1-053288e6eb2a",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    },
+                                                    "content": [
+                                                        {
+                                                            "id": "topicref:3;42:131",
+                                                            "class": "evidence-ref",
+                                                            "debugDITATag": "topicref",
+                                                            "title": "At 1-year follow up",
+                                                            "href": "2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                            "api-content": "/v3/content/2eb6569e-0c5e-459e-b50e-d5ef1c6e126d",
+                                                            "metadata": {
+                                                                "condition-disease": [
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "id": "topicref:4;43:132",
+                                                            "class": "evidence-ref",
+                                                            "debugDITATag": "topicref",
+                                                            "title": "At 2 -year follow up",
+                                                            "href": "764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                            "api-content": "/v3/content/764e94a3-c1c9-4eb6-95b4-89dc1d81ff93",
+                                                            "metadata": {
+                                                                "condition-disease": [
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "topicgroup:3;47:59",
+                                            "class": "rec-service-user-info-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:2;48:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Service User information"
+                                            },
+                                            "content": [
+                                                {
+                                                    "id": "topicref:5;53:127",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "Overview",
+                                                    "href": "084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "api-content": "/v3/content/084bfef9-162f-4bfd-86ad-8087ffb9b4b3",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:6;54:141",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What are the benefits?",
+                                                    "href": "a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "api-content": "/v3/content/a384e02b-54b2-4c76-81b6-2af89dfa611f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "id": "topicref:7;55:151",
+                                                    "class": "service-user-info-ref",
+                                                    "debugDITATag": "topicref",
+                                                    "title": "What does the treatment involve?",
+                                                    "href": "7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "api-content": "/v3/content/7006b96b-a7ee-48b1-afe9-7713e22ed10f",
+                                                    "metadata": {
+                                                        "condition-disease": [
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                            "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "topichead:8;60:24",
+                                "class": null,
+                                "debugDITATag": "topichead",
+                                "title": "Other treatment options",
+                                "nodes": [
+                                    {
+                                        "id": "topicgroup:1;6:51",
+                                        "class": "recommendation-card",
+                                        "debugDITATag": "topicgroup",
+                                        "title": null,
+                                        "metadata": {
+                                            "content-id": "rec-0008",
+                                            "rec-type": "instruction",
+                                            "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                            "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                            "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                            "medicine": "_271543875",
+                                            "services": "nice/Services/ClinicalHealthCare",
+                                            "service-roles": "nice/ServiceRoles/Practitioner",
+                                            "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                        },
+                                        "search": {"q": "index_s:publication AND content-id_s:rec-0008"},
+                                        "changes": [
+                                            {"remove": null},
+                                            {
+                                                "completed": "2022-08-15",
+                                                "change-summary": "First recommendation card for rec-0008"
+                                            }
+                                        ],
+                                        "content": {
+                                            "id": "topicref:1;32:143",
+                                            "class": "recommendation-ref",
+                                            "debugDITATag": "topicref",
+                                            "title": "Trastuzumab emtansine",
+                                            "href": "f69d6ce5-386f-4e20-a18b-8bbfc7ccd9c9",
+                                            "api-content": "/v3/content/f69d6ce5-386f-4e20-a18b-8bbfc7ccd9c9",
+                                            "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                        },
+                                        "nodes": {
+                                            "id": "topicgroup:2;35:54",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;36:24",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence"
+                                            },
+                                            "content": {
+                                                "id": "topicref:2;41:141",
+                                                "class": "rationale-ref",
+                                                "debugDITATag": "topicref",
+                                                "title": "Why we made this recommendation",
+                                                "href": "0dc91755-beac-40b3-9941-df0105574863",
+                                                "api-content": "/v3/content/0dc91755-beac-40b3-9941-df0105574863",
+                                                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "topicgroup:1;6:51",
+                                        "class": "recommendation-card",
+                                        "debugDITATag": "topicgroup",
+                                        "title": null,
+                                        "metadata": {
+                                            "content-id": "rec-0008",
+                                            "rec-type": "instruction",
+                                            "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                            "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                            "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                            "medicine": "_271543875",
+                                            "services": "nice/Services/ClinicalHealthCare",
+                                            "service-roles": "nice/ServiceRoles/Practitioner",
+                                            "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                        },
+                                        "search": {"q": "index_s:publication AND content-id_s:rec-0008"},
+                                        "changes": [
+                                            {"remove": null},
+                                            {
+                                                "completed": "2022-08-15",
+                                                "change-summary": "First recommendation card for rec-0008"
+                                            }
+                                        ],
+                                        "content": {
+                                            "id": "topicref:1;32:143",
+                                            "class": "recommendation-ref",
+                                            "debugDITATag": "topicref",
+                                            "title": "Trastuzumab emtansine",
+                                            "href": "f69d6ce5-386f-4e20-a18b-8bbfc7ccd9c9",
+                                            "api-content": "/v3/content/f69d6ce5-386f-4e20-a18b-8bbfc7ccd9c9",
+                                            "metadata": {
+                                                "condition-disease": [
+                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                    "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                ]
+                                            }
+                                        },
+                                        "nodes": {
+                                            "id": "topicgroup:2;35:54",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;36:24",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence"
+                                            },
+                                            "content": {
+                                                "id": "topicref:2;41:141",
+                                                "class": "rationale-ref",
+                                                "debugDITATag": "topicref",
+                                                "title": "Why we made this recommendation",
+                                                "href": "0dc91755-beac-40b3-9941-df0105574863",
+                                                "api-content": "/v3/content/0dc91755-beac-40b3-9941-df0105574863",
+                                                "metadata": {
+                                                    "condition-disease": [
+                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer",
+                                                        "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "topicgroup:1;6:49",
+                                        "class": "recommendation-card",
+                                        "debugDITATag": "topicgroup",
+                                        "title": null,
+                                        "metadata": {
+                                            "content-id": "rec-0009",
+                                            "rec-type": "instruction",
+                                            "population": "nice/Population/PopulationByAge/Adults(18YearsAndOlder)",
+                                            "care-stage": "nice/StagesOfClinicalCare/ClinicalCaseManagement",
+                                            "condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer/BreastCancerByReceptorStatus/hormone-receptor-positive-and-her2-positive-breast-cancer",
+                                            "medicine": "_176306090",
+                                            "services": "nice/Services/ClinicalHealthCare",
+                                            "service-roles": "nice/ServiceRoles/Practitioner",
+                                            "intervention": "nice/Interventions/InterventionsByIntent/AdjuvantTherapy"
+                                        },
+                                        "search": {"q": "index_s:publication AND content-id_s:rec-0009"},
+                                        "changes": [
+                                            {"remove": null},
+                                            {
+                                                "completed": "2022-08-19",
+                                                "change-summary": "First recommendation card for rec-0009"
+                                            }
+                                        ],
+                                        "content": {
+                                            "id": "topicref:1;32:127",
+                                            "class": "recommendation-ref",
+                                            "debugDITATag": "topicref",
+                                            "title": "Neratinib",
+                                            "href": "d8944d1d-b555-4bd5-b789-0f923ff93099",
+                                            "api-content": "/v3/content/d8944d1d-b555-4bd5-b789-0f923ff93099",
+                                            "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                        },
+                                        "nodes": {
+                                            "id": "topicgroup:2;35:50",
+                                            "class": "rec-evidence-group",
+                                            "debugDITATag": "topicgroup",
+                                            "title": null,
+                                            "nodes": {
+                                                "id": "topichead:1;36:18",
+                                                "class": null,
+                                                "debugDITATag": "topichead",
+                                                "title": "Evidence"
+                                            },
+                                            "content": {
+                                                "id": "topicref:2;41:126",
+                                                "class": "rationale-ref",
+                                                "debugDITATag": "topicref",
+                                                "title": "Why we made this recommendation",
+                                                "href": "9cdab902-18a6-4a39-a1ff-275990e6abac",
+                                                "api-content": "/v3/content/9cdab902-18a6-4a39-a1ff-275990e6abac",
+                                                "metadata": {"condition-disease": "nice/ConditionsAndDiseases/CancerBySite/BreastCancer"}
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

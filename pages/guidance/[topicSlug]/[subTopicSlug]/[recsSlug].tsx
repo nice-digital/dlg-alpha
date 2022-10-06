@@ -3,9 +3,9 @@ import { GetServerSideProps } from "next";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { ErrorPageContent } from "../../../../components/ErrorPageContent/ErrorPageContent";
-import { getGuidanceProduct } from "../../../../feeds/products";
+import { getTopic } from "../../../../feeds/products";
 import {
-	GuidelineAssembly,
+	TopicAssembly,
 	RecsPageNode,
 	SubTopicNode,
 	RecGroupClass,
@@ -21,44 +21,23 @@ const RecGroupComponents: Record<RecGroupClass, ElementType> = {
 	"rec-instructions-group": InstructionsRecGroup,
 };
 
-export interface GuidanceProductOverviewProps {
-	product: GuidelineAssembly;
-	productSlug: string;
+export interface GuidanceRecsPageProps {
+	topic: TopicAssembly;
+	topicSlug: string;
 	subTopic: SubTopicNode;
 	subTopicSlug: string;
 	recsPage: RecsPageNode;
 	recsSlug: string;
 }
 
-export default function GuidanceProductOverviewPage({
-	product,
-	productSlug,
+export default function GuidanceRecsPage({
+	topic,
+	topicSlug,
 	subTopic,
 	subTopicSlug,
 	recsPage,
 	recsSlug,
-}: GuidanceProductOverviewProps) {
-	if (!product)
-		return (
-			<ErrorPageContent
-				heading="Guidance not found"
-				title="Guidance not found"
-			/>
-		);
-
-	if (!subTopic)
-		return (
-			<ErrorPageContent heading="Topic not found" title="Topic not found" />
-		);
-
-	if (!recsPage)
-		return (
-			<ErrorPageContent
-				heading="Recommendations page not found"
-				title="Recommendations page not found"
-			/>
-		);
-
+}: GuidanceRecsPageProps) {
 	return (
 		<>
 			<NextSeo title={recsPage.title} />
@@ -68,25 +47,22 @@ export default function GuidanceProductOverviewPage({
 				<Breadcrumb elementType={Link} to="/guidance">
 					NICE guidance
 				</Breadcrumb>
-				<Breadcrumb
-					elementType={Link}
-					to={`/guidance/${slugify(product.title)}`}
-				>
-					{product.title}
+				<Breadcrumb elementType={Link} to={`/guidance/${topicSlug}`}>
+					{topic.content.title}
 				</Breadcrumb>
 				<Breadcrumb
 					elementType={Link}
-					to={`/guidance/${slugify(product.title)}/${slugify(subTopic.title)}`}
+					to={`/guidance/${topicSlug}/${subTopicSlug}`}
 				>
-					{subTopic.title}
+					{subTopic.content.title}
 				</Breadcrumb>
-				<Breadcrumb>{recsPage.title}</Breadcrumb>
+				<Breadcrumb>{recsPage.content.title}</Breadcrumb>
 			</Breadcrumbs>
 
 			<PageHeader
 				id="content-start"
-				heading={recsPage.title}
-				preheading={subTopic.title}
+				preheading={subTopic.content.title}
+				heading={recsPage.content.title}
 			/>
 
 			{recsPage.nodes.map((recGroup) => {
@@ -98,30 +74,39 @@ export default function GuidanceProductOverviewPage({
 	);
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
-	params,
-	res,
-}) => {
-	const { productSlug, subTopicSlug, recsSlug } = params;
-	const product = await getGuidanceProduct(productSlug as string);
+export const getServerSideProps: GetServerSideProps<
+	GuidanceRecsPageProps
+> = async ({ params, res }) => {
+	const topicSlug = params.topicSlug as string,
+		subTopicSlug = params.subTopicSlug as string,
+		recsSlug = params.recsSlug as string,
+		topic = await getTopic(topicSlug);
 
-	if (!product) res.statusCode = 404;
+	if (!topic) return { notFound: true };
 
-	const subTopic = product
-		? product.nodes.find((n) => slugify(n.title) === subTopicSlug)
-		: null;
+	const subTopics = Array.isArray(topic.nodes) ? topic.nodes : [topic.nodes],
+		subTopic = subTopics.find(
+			(node) => slugify(node.content.title) === subTopicSlug
+		);
 
-	if (!subTopic) res.statusCode = 404;
+	if (!subTopic) return { notFound: true };
 
-	const recsPage = subTopic
-		? subTopic.nodes.find(
-				(n) => n.class === "recspage" && slugify(n.title) === recsSlug
-		  )
-		: null;
+	const recsPages = Array.isArray(subTopic.nodes)
+		? subTopic.nodes
+		: [subTopic.nodes];
 
-	if (!recsPage) res.statusCode = 404;
+	const recsPage = recsPages.find((n) => slugify(n.content.title) === recsSlug);
+
+	if (!recsPage) return { notFound: true };
 
 	return {
-		props: { product, productSlug, subTopic, subTopicSlug, recsPage, recsSlug },
+		props: {
+			topic,
+			topicSlug,
+			subTopic,
+			subTopicSlug,
+			recsPage,
+			recsSlug,
+		},
 	};
 };

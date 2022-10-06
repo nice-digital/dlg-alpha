@@ -8,12 +8,12 @@ export interface ConversationsRecGroupProps {
 }
 
 export const ConversationsRecGroup: FC<ConversationsRecGroupProps> = ({
-	recGroup: { title, content },
+	recGroup: { nodes },
 }) => {
 	return (
-		<AccordionGroup title={title}>
-			{content.recommendations.map((rec, i) => (
-				<Accordion key={i} title={`Rec ${i}`}>
+		<AccordionGroup title={nodes.title}>
+			{nodes.nodes.map((rec, i) => (
+				<Accordion key={i} title={rec.content.title}>
 					<code>{JSON.stringify(rec, null, 2)}</code>
 				</Accordion>
 			))}

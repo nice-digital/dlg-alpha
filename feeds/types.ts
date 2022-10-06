@@ -1,45 +1,68 @@
-export interface PartialProduct {
+export interface PartialTopic {
 	title: string;
 	slug: string;
-	type: "guideline";
+	type: "topic";
 }
 
 export type FeedChange = {
-	/** Date in yyyy-mm-yy format */
 	completed: string;
 	"change-summary": string;
 };
 
 export type FeedChanges = FeedChange[];
 
-export type FeedMetadata = Record<string, string>;
+export type FeedMetadata = {
+	"content-id"?: string;
+	population?: string;
+	"care-stage"?: string;
+	"condition-disease"?: string;
+	medicine?: string;
+	services?: string;
+	"service-roles"?: string;
+	intervention?: string;
+} & Record<string, string>;
+
+export type DebugDITATag = "topicref" | "topichead" | "topicgroup";
+
+export interface FeedContent {
+	id: string;
+	class: string;
+	debugDITATag: DebugDITATag;
+	title: string;
+	href: string;
+	"api-content": string;
+	metadata: FeedMetadata;
+}
 
 export interface ProductResponse {
 	$schema: string;
-	assembly: GuidelineAssembly;
+	assembly: TopicAssembly;
 }
 
-export interface GuidelineAssembly {
-	type: "guideline";
+export interface TopicAssembly {
+	type: "topic";
 	title: string;
-	changes: FeedChanges;
 	metadata: FeedMetadata;
-	nodes: SubTopicNode[];
+	content: FeedContent;
+	nodes: SubTopicNode | SubTopicNode[];
 }
 
 export interface BaseNode<TClass extends string> {
+	id: string;
+	debugDITATag: string;
 	class: TClass;
 	title: string;
 }
 
 export interface SubTopicNode extends BaseNode<"subtopic"> {
-	changes: FeedChanges;
 	metadata: FeedMetadata;
-	nodes: (SubTopicNode | RecsPageNode)[];
+	changes: FeedChanges;
+	content: FeedContent;
+	nodes: RecsPageNode | RecsPageNode[];
 }
 
 export interface RecsPageNode extends BaseNode<"recspage"> {
-	content: unknown;
+	content: FeedContent;
 	nodes: (RecommendationConversationsGroup | RecommendationInstructionsGroup)[];
 }
 
@@ -48,17 +71,25 @@ export interface RecommendationConversationsGroup
 	extends BaseNode<typeof ConversationsGroupClass> {
 	changes: FeedChanges;
 	metadata: FeedMetadata;
-	content: {
-		recommendations: ConversationRecommendation[];
-	};
+	nodes: ConversationsHeading;
+}
+
+export interface ConversationsHeading extends BaseNode<null> {
+	metadata: FeedMetadata;
+	changes: FeedChanges;
+	nodes: ConversationRecommendation[];
 }
 
 export const InstructionsGroupClass = "rec-instructions-group";
 export interface RecommendationInstructionsGroup
 	extends BaseNode<typeof InstructionsGroupClass> {
-	content: {
-		recommendations: InstructionRecommendation[];
-	};
+	nodes: InstructionsGroupHeading[];
+}
+
+export interface InstructionsGroupHeading extends BaseNode<null> {
+	metadata: FeedMetadata;
+	changes: FeedChanges;
+	nodes: InstructionRecommendation | InstructionRecommendation[];
 }
 
 export type RecGroupClass =
@@ -67,14 +98,15 @@ export type RecGroupClass =
 
 export interface BaseRecommendationCard<
 	TRecType extends "conversation" | "instruction"
-> {
+> extends BaseNode<"recommendation-card"> {
 	class: "recommendation-card";
 	changes: FeedChanges;
 	metadata: FeedMetadata & {
 		"content-id": string;
 		"rec-type": TRecType;
 	};
-	content: { "": null };
+	search: { q: string };
+	content: FeedContent;
 }
 
 export type ConversationRecommendation = BaseRecommendationCard<"conversation">;

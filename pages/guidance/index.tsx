@@ -3,17 +3,17 @@ import { Grid, GridItem } from "@nice-digital/nds-grid";
 import { ColumnList } from "@nice-digital/nds-column-list";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { GetServerSideProps } from "next";
-import { getAllGuidanceProducts } from "../../feeds/products";
-import { PartialProduct } from "../../feeds/types";
+import { getAllGuidanceTopics } from "../../feeds/products";
+import { PartialTopic } from "../../feeds/types";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
 
 export interface GuidanceIndexPageProps {
-	products: PartialProduct[];
+	topics: PartialTopic[];
 }
 
 export default function GuidanceIndexPage({
-	products,
+	topics,
 }: GuidanceIndexPageProps): JSX.Element {
 	return (
 		<>
@@ -26,13 +26,13 @@ export default function GuidanceIndexPage({
 
 			<PageHeader id="content-start" heading="NICE guidance" />
 
-			<h2>All guidance products</h2>
+			<h2>Guidance topics</h2>
 
 			<ColumnList>
-				{products.map((p) => (
-					<li key={p.title}>
-						<Link href={`/guidance/${p.slug}`}>
-							<a>{p.title}</a>
+				{topics.map((topic) => (
+					<li key={topic.title}>
+						<Link href={`/guidance/${topic.slug}`}>
+							<a>{topic.title}</a>
 						</Link>
 					</li>
 				))}
@@ -41,8 +41,10 @@ export default function GuidanceIndexPage({
 	);
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-	const products = await getAllGuidanceProducts();
+export const getServerSideProps: GetServerSideProps<
+	GuidanceIndexPageProps
+> = async () => {
+	const topics = await getAllGuidanceTopics();
 
-	return { props: { products } };
+	return { props: { topics } };
 };
