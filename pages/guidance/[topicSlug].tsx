@@ -9,10 +9,11 @@ import { ContentResponse, SubTopicNode, TopicAssembly } from "@/feeds/types";
 import { NextSeo } from "next-seo";
 import { Link } from "@/components/Link/Link";
 
+import { PageIntro } from "@/components/PageIntro/PageIntro";
+
 export interface GuidanceTopicOverviewProps {
-	topic: TopicAssembly;
+	topic: TopicAssembly & { contentResponse: ContentResponse };
 	topicSlug: string;
-	content: ContentResponse;
 	subTopicContentResponses: ContentResponse[];
 }
 
@@ -40,7 +41,6 @@ const SubTopicLink = ({
 export default function GuidanceTopicOverviewPage({
 	topic,
 	topicSlug,
-	content,
 	subTopicContentResponses,
 }: GuidanceTopicOverviewProps) {
 	return (
@@ -56,7 +56,7 @@ export default function GuidanceTopicOverviewPage({
 
 			<PageHeader id="content-start" heading={topic.content.title} />
 
-			<div dangerouslySetInnerHTML={{ __html: content.content.data }}></div>
+			<PageIntro>{topic.contentResponse.content.data}</PageIntro>
 
 			<Grid gutter="loose">
 				{Array.isArray(topic.nodes) ? (
@@ -82,7 +82,7 @@ export default function GuidanceTopicOverviewPage({
 							topicSlug={topicSlug}
 							intro={
 								subTopicContentResponses.find(
-									(c) => c.id === topic.nodes.content.href
+									(c) => c.id === (topic.nodes as SubTopicNode).content.href
 								).content.data
 							}
 						/>
@@ -102,15 +102,25 @@ export const getServerSideProps: GetServerSideProps<
 	if (!topic) return { notFound: true };
 
 	// Second request to get the topic intro body because of how the API is structured
-	const content = await getContent(topic.content.href);
+	const contentResponse = await getContent(topic.content.href);
 
-	if (!content) return { notFound: true };
+	if (!contentResponse) return { notFound: true };
 
+	// Get the content for all the sub topics, in parallel
 	const contentPromises = Array.isArray(topic.nodes)
 		? topic.nodes.map((node) => getContent(node.content.href))
 		: [getContent(topic.nodes.content.href)];
 
 	const subTopicContentResponses = await Promise.all(contentPromises);
 
-	return { props: { topic, topicSlug, content, subTopicContentResponses } };
+	return {
+		props: {
+			topic: {
+				...topic,
+				contentResponse,
+			},
+			topicSlug,
+			subTopicContentResponses,
+		},
+	};
 };
