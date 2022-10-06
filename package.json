@@ -14,6 +14,7 @@
     "@nice-digital/global-nav": "^5.0.909",
     "@nice-digital/nds-breadcrumbs": "^3.0.0",
     "@nice-digital/nds-horizontal-nav": "^3.0.2",
+    "@nice-digital/nds-page-header": "^3.0.2",
     "@sindresorhus/slugify": "^2.1.0",
     "config": "^3.3.7",
     "fs-extra": "^10.1.0",

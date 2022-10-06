@@ -22,7 +22,7 @@ export const InstructionsRecGroup: FC<InstructionsRecGroupProps> = ({
 							<Recommendation
 								key={i}
 								id={rec.metadata["content-id"]}
-								dateUpdated={rec.changes[0].completed}
+								dateUpdated={rec.changes[1].completed}
 								evidenceLink={true}
 								updateLink={true}
 								sdmLink={true}
@@ -33,7 +33,7 @@ export const InstructionsRecGroup: FC<InstructionsRecGroupProps> = ({
 					) : (
 						<Recommendation
 							id={node.nodes.metadata["content-id"]}
-							dateUpdated={node.nodes.changes[0].completed}
+							dateUpdated={node.nodes.changes[1].completed}
 							evidenceLink={true}
 							updateLink={true}
 							sdmLink={true}

@@ -1,25 +1,32 @@
-import slugify from "@sindresorhus/slugify";
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+
+import slugify from "@sindresorhus/slugify";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { PageHeader } from "@nice-digital/nds-page-header";
+
 import { Link } from "@/components/Link/Link";
-import { getGuidanceProduct } from "@/feeds/products";
-import { GuidelineAssembly, RecsPageNode, SubTopicNode } from "@/feeds/types";
 import {
 	RecHorizontalNav,
 	RecHorizontalNavOption,
 } from "@/components/RecHorizontalNav/RecHorizontalNav";
+import { TopicAssembly, RecsPageNode, SubTopicNode } from "@/feeds/types";
+import { getTopic } from "@/feeds/products";
 
 export interface RecsPageSDMProps {
-	product: GuidelineAssembly;
+	topic: TopicAssembly;
+	topicSlug: string;
 	subTopic: SubTopicNode;
+	subTopicSlug: string;
 	recsPage: RecsPageNode;
+	recsSlug: string;
 }
 
 export default function recommendationSDMPage({
-	product,
+	topic,
+	topicSlug,
 	subTopic,
+	subTopicSlug,
 	recsPage,
 }: RecsPageSDMProps) {
 	return (
@@ -31,27 +38,24 @@ export default function recommendationSDMPage({
 				<Breadcrumb elementType={Link} to="/guidance">
 					NICE guidance
 				</Breadcrumb>
-				<Breadcrumb
-					elementType={Link}
-					to={`/guidance/${slugify(product.title)}`}
-				>
-					{product.title}
+				<Breadcrumb elementType={Link} to={`/guidance/${topicSlug}`}>
+					{topic.content.title}
 				</Breadcrumb>
 				<Breadcrumb
 					elementType={Link}
-					to={`/guidance/${slugify(product.title)}/${slugify(subTopic.title)}`}
+					to={`/guidance/${topicSlug}/${subTopicSlug}`}
 				>
 					{subTopic.title}
 				</Breadcrumb>
 				<Breadcrumb
 					elementType={Link}
-					to={`/guidance/${slugify(product.title)}/${slugify(
-						subTopic.title
-					)}/${slugify(recsPage.title)}`}
+					to={`/guidance/${topicSlug}/${subTopicSlug}/${slugify(
+						recsPage.title
+					)}`}
 				>
 					{recsPage.title}
 				</Breadcrumb>
-				<Breadcrumb>Evidence</Breadcrumb>
+				<Breadcrumb>Shared decision making</Breadcrumb>
 			</Breadcrumbs>
 
 			<PageHeader
@@ -67,30 +71,40 @@ export default function recommendationSDMPage({
 	);
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
+export const getServerSideProps: GetServerSideProps<RecsPageSDMProps> = async ({
 	params,
 	res,
 }) => {
-	const { productSlug, subTopicSlug, recsSlug } = params;
-	const product = await getGuidanceProduct(productSlug as string);
+	const topicSlug = params.topicSlug as string,
+		subTopicSlug = params.subTopicSlug as string,
+		recsSlug = params.recsSlug as string,
+		topic = await getTopic(topicSlug);
 
-	if (!product) res.statusCode = 404;
+	if (!topic) return { notFound: true };
 
-	const subTopic = product
-		? product.nodes.find((n) => slugify(n.title) === subTopicSlug)
-		: null;
+	const subTopics = Array.isArray(topic.nodes) ? topic.nodes : [topic.nodes],
+		subTopic = subTopics.find(
+			(node) => slugify(node.content.title) === subTopicSlug
+		);
 
-	if (!subTopic) res.statusCode = 404;
+	if (!subTopic) return { notFound: true };
 
-	const recsPage = subTopic
-		? subTopic.nodes.find(
-				(n) => n.class === "recspage" && slugify(n.title) === recsSlug
-		  )
-		: null;
+	const recsPages = Array.isArray(subTopic.nodes)
+		? subTopic.nodes
+		: [subTopic.nodes];
 
-	if (!recsPage) res.statusCode = 404;
+	const recsPage = recsPages.find((n) => slugify(n.content.title) === recsSlug);
+
+	if (!recsPage) return { notFound: true };
 
 	return {
-		props: { product, productSlug, subTopic, subTopicSlug, recsPage, recsSlug },
+		props: {
+			topic,
+			topicSlug,
+			subTopic,
+			subTopicSlug,
+			recsPage,
+			recsSlug,
+		},
 	};
 };
