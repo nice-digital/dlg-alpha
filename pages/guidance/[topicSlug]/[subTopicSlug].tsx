@@ -4,14 +4,10 @@ import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
 import { Card } from "@nice-digital/nds-card";
 import { Grid, GridItem } from "@nice-digital/nds-grid";
-import { getTopic } from "../../../feeds/products";
-import {
-	TopicAssembly,
-	SubTopicNode,
-	RecsPageNode,
-} from "../../../feeds/types";
+import { getTopic } from "@/feeds/products";
+import { TopicAssembly, SubTopicNode, RecsPageNode } from "@/feeds/types";
 import { NextSeo } from "next-seo";
-import { Link } from "../../../components/Link/Link";
+import { Link } from "@/components/Link/Link";
 
 const RecsPageLink = ({
 	recsPage,

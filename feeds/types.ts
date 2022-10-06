@@ -126,3 +126,14 @@ export interface ServiceUserInformation {
 	title: string;
 	content: unknown;
 }
+
+export interface ContentResponse {
+	id: string;
+	url: string;
+	title: string;
+	outline: string;
+	content: {
+		mime: "application/xml";
+		data: string;
+	};
+}

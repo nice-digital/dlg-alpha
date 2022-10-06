@@ -16,6 +16,7 @@
     "@nice-digital/nds-horizontal-nav": "^3.0.2",
     "@sindresorhus/slugify": "^2.1.0",
     "config": "^3.3.7",
+    "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
     "next": "^12.2.5",
     "next-plugin-node-config": "^1.0.2",
@@ -26,6 +27,7 @@
     "sass": "^1.54.4"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.7.16",
     "@types/react": "^18.0.19",
     "eslint": "8.21.0",
