@@ -127,5 +127,19 @@ export const getServerSideProps: GetServerSideProps<
 
 	if (!subTopic) return { notFound: true };
 
-	return { props: { topic, topicSlug, subTopic, subTopicSlug } };
+	const firstRecsPageSlug = slugify(
+		Array.isArray(subTopic.nodes)
+			? subTopic.nodes[0].content.title
+			: subTopic.nodes.content.title
+	);
+
+	// We don't have a 'sub topic' page, so instead redirect to the first recs page that sits underneath
+	return {
+		redirect: {
+			destination: `/guidance/${topicSlug}/${subTopicSlug}/${firstRecsPageSlug}`,
+			permanent: false,
+		},
+	};
+
+	//return { props: { topic, topicSlug, subTopic, subTopicSlug } };
 };
