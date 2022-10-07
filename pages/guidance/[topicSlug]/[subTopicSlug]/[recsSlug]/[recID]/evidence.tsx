@@ -141,9 +141,18 @@ export const getServerSideProps: GetServerSideProps<
 	) as RecommendationInstructionsGroup;
 	const recInstructionsNodes =
 		recInstructions?.nodes as InstructionsGroupHeading[];
+
+	console.log("recInstructionsNodes", recInstructionsNodes);
+
 	const instructionsGroup = recInstructionsNodes?.find((n) => {
 		const node = n.nodes as InstructionRecommendation;
-		return node.metadata["content-id"] === recID;
+		if (Array.isArray(node)) {
+			return node.find(
+				(nestedNode) => nestedNode.metadata["content-id"] === recID
+			);
+		} else {
+			return node.metadata["content-id"] === recID;
+		}
 	}) as InstructionsGroupHeading;
 
 	if (!instructionsGroup) return { notFound: true };
