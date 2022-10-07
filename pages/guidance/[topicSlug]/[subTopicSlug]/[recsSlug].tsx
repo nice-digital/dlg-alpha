@@ -85,7 +85,7 @@ export default function GuidanceRecsPage({
 					<Contents items={contentsItems} />
 				</GridItem>
 				<GridItem cols={12} md={8} lg={9}>
-					<h2>{recsPage.content.title}</h2>
+					<h2 style={{ marginTop: 0 }}>{recsPage.content.title}</h2>
 
 					<PageIntro>{recsPage.contentResponse.content.data}</PageIntro>
 
