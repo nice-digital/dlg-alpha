@@ -28,6 +28,7 @@ export default function recommendationUpdatesPage({
 	subTopic,
 	subTopicSlug,
 	recsPage,
+	recsSlug,
 }: RecsPageUpdatesProps) {
 	return (
 		<>
@@ -41,19 +42,17 @@ export default function recommendationUpdatesPage({
 				<Breadcrumb elementType={Link} to={`/guidance/${topicSlug}`}>
 					{topic.content.title}
 				</Breadcrumb>
-				<Breadcrumb
+				{/* <Breadcrumb
 					elementType={Link}
 					to={`/guidance/${topicSlug}/${subTopicSlug}`}
 				>
 					{subTopic.title}
-				</Breadcrumb>
+				</Breadcrumb> */}
 				<Breadcrumb
 					elementType={Link}
-					to={`/guidance/${topicSlug}/${subTopicSlug}/${slugify(
-						recsPage.title
-					)}`}
+					to={`/guidance/${topicSlug}/${subTopicSlug}/${recsSlug}`}
 				>
-					{recsPage.title}
+					{recsPage.content.title}
 				</Breadcrumb>
 				<Breadcrumb>Updates</Breadcrumb>
 			</Breadcrumbs>
@@ -61,7 +60,7 @@ export default function recommendationUpdatesPage({
 			<PageHeader
 				id="content-start"
 				heading="Update information"
-				lead={recsPage.title}
+				lead={recsPage.content.title}
 			/>
 
 			<RecHorizontalNav currentLink={RecHorizontalNavOption.Updates} />

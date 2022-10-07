@@ -30,6 +30,7 @@ export default function recommendationEvidencePage({
 	subTopic,
 	subTopicSlug,
 	recsPage,
+	recsSlug,
 }: RecsPageEvidenceProps) {
 	const contentsItems: ContentsItem[] = [
 		{
@@ -55,24 +56,26 @@ export default function recommendationEvidencePage({
 				<Breadcrumb elementType={Link} to={`/guidance/${topicSlug}`}>
 					{topic.content.title}
 				</Breadcrumb>
-				<Breadcrumb
+				{/* <Breadcrumb
 					elementType={Link}
 					to={`/guidance/${topicSlug}/${subTopicSlug}`}
 				>
 					{subTopic.title}
-				</Breadcrumb>
+				</Breadcrumb> */}
 				<Breadcrumb
 					elementType={Link}
-					to={`/guidance/${topicSlug}/${subTopicSlug}/${slugify(
-						recsPage.title
-					)}`}
+					to={`/guidance/${topicSlug}/${subTopicSlug}/${recsSlug}`}
 				>
-					{recsPage.title}
+					{recsPage.content.title}
 				</Breadcrumb>
 				<Breadcrumb>Evidence</Breadcrumb>
 			</Breadcrumbs>
 
-			<PageHeader id="content-start" heading="Evidence" lead={recsPage.title} />
+			<PageHeader
+				id="content-start"
+				heading="Evidence"
+				lead={recsPage.content.title}
+			/>
 
 			<RecHorizontalNav currentLink={RecHorizontalNavOption.Evidence} />
 

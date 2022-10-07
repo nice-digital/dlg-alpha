@@ -28,6 +28,7 @@ export default function recommendationSDMPage({
 	subTopic,
 	subTopicSlug,
 	recsPage,
+	recsSlug,
 }: RecsPageSDMProps) {
 	return (
 		<>
@@ -41,19 +42,17 @@ export default function recommendationSDMPage({
 				<Breadcrumb elementType={Link} to={`/guidance/${topicSlug}`}>
 					{topic.content.title}
 				</Breadcrumb>
-				<Breadcrumb
+				{/* <Breadcrumb
 					elementType={Link}
 					to={`/guidance/${topicSlug}/${subTopicSlug}`}
 				>
 					{subTopic.title}
-				</Breadcrumb>
+				</Breadcrumb> */}
 				<Breadcrumb
 					elementType={Link}
-					to={`/guidance/${topicSlug}/${subTopicSlug}/${slugify(
-						recsPage.title
-					)}`}
+					to={`/guidance/${topicSlug}/${subTopicSlug}/${recsSlug}`}
 				>
-					{recsPage.title}
+					{recsPage.content.title}
 				</Breadcrumb>
 				<Breadcrumb>Shared decision making</Breadcrumb>
 			</Breadcrumbs>
@@ -61,7 +60,7 @@ export default function recommendationSDMPage({
 			<PageHeader
 				id="content-start"
 				heading="Shared decision making"
-				lead={recsPage.title}
+				lead={recsPage.content.title}
 			/>
 
 			<RecHorizontalNav currentLink={RecHorizontalNavOption.SDM} />
