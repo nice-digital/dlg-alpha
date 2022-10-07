@@ -1,3 +1,4 @@
+@use '@nice-digital/nds-core/scss/layout';
 @use '@nice-digital/nds-core/scss/spacing';
 @use '@nice-digital/nds-core/scss/typography';
 @use '@nice-digital/nds-core/scss/utils';
@@ -10,6 +11,7 @@
   grid-auto-rows: minmax(min-content, max-content);
   grid-template-columns: minmax(min-content, max-content) 1fr;
   margin-bottom: utils.rem(spacing.$large);
+  max-width: layout.$readable-width;
 
   > * {
     padding: utils.rem(spacing.$small) utils.rem(spacing.$medium);
