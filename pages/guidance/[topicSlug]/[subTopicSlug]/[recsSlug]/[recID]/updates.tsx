@@ -81,7 +81,11 @@ export default function recommendationUpdatesPage({
 				id={recommendation.metadata["content-id"]}
 				dateUpdated={recommendation.changes[1].completed}
 			>
-				{topic.contentResponse.content.data}
+				<div
+					dangerouslySetInnerHTML={{
+						__html: topic.contentResponse.content.data,
+					}}
+				/>
 			</Recommendation>
 
 			<p>TODO: Updates page content...</p>
