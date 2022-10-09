@@ -10,6 +10,7 @@
   border: 1px solid colours.$accordion-border;
   margin-top: -1px;
   max-width: layout.$readable-width;
+  padding: utils.rem(spacing.$medium);
 }
 
 .summary {
@@ -18,7 +19,13 @@
   display: flex;
   flex-direction: row;
   list-style: none;
+  margin: -(utils.rem(spacing.$medium));
   padding: utils.rem(spacing.$medium);
+
+  [open] & {
+    border-bottom: 1px solid colours.$accordion-border;
+    margin-bottom: utils.rem(spacing.$medium);
+  }
 
   &::before {
     @include typography.font(h2);
@@ -34,6 +41,10 @@
     justify-content: center;
     margin: utils.rem(0 spacing.$medium 0 0);
     width: utils.rem(spacing.$large);
+  }
+
+  [open] &::before {
+    content: '－';
   }
 
   &::marker,

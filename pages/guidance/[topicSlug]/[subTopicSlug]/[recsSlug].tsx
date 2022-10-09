@@ -1,4 +1,5 @@
 import slugify from "@sindresorhus/slugify";
+import { type Merge, type Simplify } from "type-fest";
 import { GetServerSideProps } from "next";
 import { PageHeader } from "@nice-digital/nds-page-header";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
@@ -10,6 +11,8 @@ import {
 	SubTopicNode,
 	RecGroupClass,
 	ContentResponse,
+	ConversationRecommendation,
+	InstructionRecommendation,
 } from "@/feeds/types";
 import { NextSeo } from "next-seo";
 import { ElementType } from "react";
@@ -30,7 +33,8 @@ export interface GuidanceRecsPageProps {
 	subTopic: SubTopicNode;
 	subTopicSlug: string;
 	recsPage: RecsPageNode & { contentResponse: ContentResponse };
-	recsSlug: string;
+	recsPageSlug: string;
+	recContents: ContentResponse[];
 }
 
 export default function GuidanceRecsPage({
@@ -39,7 +43,8 @@ export default function GuidanceRecsPage({
 	subTopic,
 	subTopicSlug,
 	recsPage,
-	recsSlug,
+	recsPageSlug,
+	recContents,
 }: GuidanceRecsPageProps) {
 	const mapRecsPageNodeToContentItem = (
 		recsPageNode: RecsPageNode
@@ -93,7 +98,11 @@ export default function GuidanceRecsPage({
 						const RecGroupComponent = RecGroupComponents[recGroup.class];
 
 						return (
-							<RecGroupComponent key={recGroup.title} recGroup={recGroup} />
+							<RecGroupComponent
+								key={recGroup.title}
+								recGroup={recGroup}
+								recContents={recContents}
+							/>
 						);
 					})}
 				</GridItem>
@@ -107,7 +116,7 @@ export const getServerSideProps: GetServerSideProps<
 > = async ({ params, res }) => {
 	const topicSlug = params.topicSlug as string,
 		subTopicSlug = params.subTopicSlug as string,
-		recsSlug = params.recsSlug as string,
+		recsPageSlug = params.recsSlug as string,
 		topic = await getTopic(topicSlug);
 
 	if (!topic) return { notFound: true };
@@ -123,7 +132,9 @@ export const getServerSideProps: GetServerSideProps<
 		? subTopic.nodes
 		: [subTopic.nodes];
 
-	const recsPage = recsPages.find((n) => slugify(n.content.title) === recsSlug);
+	const recsPage = recsPages.find(
+		(n) => slugify(n.content.title) === recsPageSlug
+	);
 
 	if (!recsPage) return { notFound: true };
 
@@ -131,6 +142,24 @@ export const getServerSideProps: GetServerSideProps<
 	const contentResponse = await getContent(recsPage.content.href);
 
 	if (!contentResponse) return { notFound: true };
+
+	// Make requests (in parallel) to get all the individual rec content
+	// This is tightly coupled to the structure of the feed but that's OK for the PoC
+	const recContentPromises = recsPage.nodes.flatMap((n) => {
+		if (Array.isArray(n.nodes)) {
+			return n.nodes.flatMap((p) => {
+				if (Array.isArray(p.nodes)) {
+					return p.nodes.map((rec) => getContent(rec.content.href));
+				} else {
+					return [getContent(p.nodes.content.href)];
+				}
+			});
+		} else {
+			return n.nodes.nodes.map((rec) => getContent(rec.content.href));
+		}
+	});
+
+	const recContents = (await Promise.all(recContentPromises)).filter(Boolean);
 
 	return {
 		props: {
@@ -142,7 +171,8 @@ export const getServerSideProps: GetServerSideProps<
 				...recsPage,
 				contentResponse,
 			},
-			recsSlug,
+			recsPageSlug,
+			recContents,
 		},
 	};
 };

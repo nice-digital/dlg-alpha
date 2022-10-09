@@ -1,13 +1,19 @@
 import { type FC } from "react";
-import { RecommendationInstructionsGroup } from "../../feeds/types";
+import {
+	ContentResponse,
+	InstructionRecommendation,
+	RecommendationInstructionsGroup,
+} from "../../feeds/types";
 import { Recommendation } from "../Recommendation/Recommendation";
 
 export interface InstructionsRecGroupProps {
 	recGroup: RecommendationInstructionsGroup;
+	recContents: ContentResponse[];
 }
 
 export const InstructionsRecGroup: FC<InstructionsRecGroupProps> = ({
 	recGroup: { title, nodes },
+	recContents,
 }) => {
 	return (
 		<section>
@@ -27,7 +33,13 @@ export const InstructionsRecGroup: FC<InstructionsRecGroupProps> = ({
 								updateLink={true}
 								sdmLink={true}
 							>
-								{JSON.stringify(rec, null, 2)}
+								<div
+									dangerouslySetInnerHTML={{
+										__html:
+											recContents.find((r) => r.id === rec.content.href)
+												?.content?.data || "Missing content",
+									}}
+								/>
 							</Recommendation>
 						))
 					) : (
@@ -38,7 +50,15 @@ export const InstructionsRecGroup: FC<InstructionsRecGroupProps> = ({
 							updateLink={true}
 							sdmLink={true}
 						>
-							{JSON.stringify(node.nodes, null, 2)}
+							<div
+								dangerouslySetInnerHTML={{
+									__html: recContents.find(
+										(r) =>
+											r.id ===
+											(node.nodes as InstructionRecommendation).content.href
+									).content.data,
+								}}
+							/>
 						</Recommendation>
 					)}
 				</section>

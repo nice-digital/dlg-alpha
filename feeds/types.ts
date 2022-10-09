@@ -47,7 +47,7 @@ export interface TopicAssembly {
 	nodes: SubTopicNode | SubTopicNode[];
 }
 
-export interface BaseNode<TClass extends string> {
+export interface BaseNode<TClass extends string | null> {
 	id: string;
 	debugDITATag: string;
 	class: TClass;
