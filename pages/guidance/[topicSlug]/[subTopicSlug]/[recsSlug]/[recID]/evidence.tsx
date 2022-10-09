@@ -100,7 +100,11 @@ export default function recommendationEvidencePage({
 						id={recommendation.metadata["content-id"]}
 						dateUpdated={recommendation.changes[1].completed}
 					>
-						{topic.contentResponse.content.data}
+						<div
+							dangerouslySetInnerHTML={{
+								__html: topic.contentResponse.content.data,
+							}}
+						/>
 					</Recommendation>
 					<p>TODO: Evidence page content...</p>
 				</GridItem>
@@ -141,8 +145,6 @@ export const getServerSideProps: GetServerSideProps<
 	) as RecommendationInstructionsGroup;
 	const recInstructionsNodes =
 		recInstructions?.nodes as InstructionsGroupHeading[];
-
-	console.log("recInstructionsNodes", recInstructionsNodes);
 
 	const instructionsGroup = recInstructionsNodes?.find((n) => {
 		const node = n.nodes as InstructionRecommendation;
