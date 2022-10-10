@@ -49,8 +49,6 @@ export default function RecommendationRationalePage({
 }: RecsPageEvidenceRationaleProps) {
 	const router = useRouter();
 
-	console.log({ rationale });
-
 	const contentsItems: ContentsItem[] = [
 		{
 			title: "Why we made this recommendation",

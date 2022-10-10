@@ -19,6 +19,7 @@ import {
 	RecommendationInstructionsGroup,
 	InstructionsGroupHeading,
 	InstructionRecommendation,
+	SDMGroup,
 } from "@/feeds/types";
 import { getTopic, getContent } from "@/feeds/products";
 
@@ -30,6 +31,7 @@ export interface RecsPageSDMProps {
 	recsPage: RecsPageNode;
 	recsSlug: string;
 	recommendation: InstructionRecommendation;
+	sdm: ContentResponse[];
 }
 
 export default function recommendationSDMPage({
@@ -40,6 +42,7 @@ export default function recommendationSDMPage({
 	recsPage,
 	recsSlug,
 	recommendation,
+	sdm,
 }: RecsPageSDMProps) {
 	return (
 		<>
@@ -88,7 +91,11 @@ export default function recommendationSDMPage({
 				/>
 			</Recommendation>
 
-			<p>TODO: Shared Decision Making page content...</p>
+			{sdm.map((s) => (
+				<section key={s.id}>
+					<div dangerouslySetInnerHTML={{ __html: s.content.data }}></div>
+				</section>
+			))}
 		</>
 	);
 }
@@ -150,6 +157,24 @@ export const getServerSideProps: GetServerSideProps<RecsPageSDMProps> = async ({
 	const contentResponse = await getContent(recommendation.content.href);
 	if (!contentResponse) return { notFound: true };
 
+	// Get sdm content for this recommendation
+	const infoGroupArray = Array.isArray(recommendation.nodes)
+		? recommendation.nodes
+		: [recommendation.nodes];
+	const infoGroup = infoGroupArray.find(
+		(n) => n.class === "rec-service-user-info-group"
+	) as SDMGroup;
+
+	if (!infoGroup) return { notFound: true };
+
+	const sdm = [];
+	await Promise.all(
+		infoGroup.content.map(async (r) => {
+			const response = await getContent(r.href);
+			if (response) sdm.push(response);
+		})
+	);
+
 	return {
 		props: {
 			topic: {
@@ -162,6 +187,7 @@ export const getServerSideProps: GetServerSideProps<RecsPageSDMProps> = async ({
 			recsPage,
 			recsSlug,
 			recommendation,
+			sdm,
 		},
 	};
 };

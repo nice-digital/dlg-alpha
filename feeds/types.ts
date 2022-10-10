@@ -126,6 +126,11 @@ export interface EvidenceGroup {
 	nodes: EvidenceNode;
 }
 
+export interface SDMGroup {
+	class: "rec-service-user-info-group";
+	content: FeedContent[];
+}
+
 export interface ServiceUserInformation {
 	class: "rec-service-user-info-group";
 	title: string;
