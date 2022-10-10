@@ -22,6 +22,8 @@ import {
 } from "@/feeds/types";
 import { getTopic, getContent } from "@/feeds/products";
 
+import styles from "./updates.module.scss";
+
 export interface RecsPageUpdatesProps {
 	topic: TopicAssembly & { contentResponse: ContentResponse };
 	topicSlug: string;
@@ -88,7 +90,19 @@ export default function recommendationUpdatesPage({
 				/>
 			</Recommendation>
 
-			<p>TODO: Updates page content...</p>
+			<h2>History</h2>
+			<ol className={styles.updateList}>
+				{subTopic.changes.map((c, index) => {
+					if (c["change-summary"]) {
+						return (
+							<li key={index}>
+								<h3>{c.completed}</h3>
+								<p>{c["change-summary"]}</p>
+							</li>
+						);
+					}
+				})}
+			</ol>
 		</>
 	);
 }
