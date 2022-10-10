@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 import slugify from "@sindresorhus/slugify";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
@@ -21,6 +22,7 @@ import {
 	RecommendationInstructionsGroup,
 	InstructionsGroupHeading,
 	InstructionRecommendation,
+	EvidenceGroup,
 } from "@/feeds/types";
 import { getTopic, getContent } from "@/feeds/products";
 
@@ -32,9 +34,10 @@ export interface RecsPageEvidenceProps {
 	recsPage: RecsPageNode;
 	recsSlug: string;
 	recommendation: InstructionRecommendation;
+	evidence: ContentResponse[];
 }
 
-export default function recommendationEvidencePage({
+export default function RecommendationRationalePage({
 	topic,
 	topicSlug,
 	subTopic,
@@ -42,16 +45,23 @@ export default function recommendationEvidencePage({
 	recsPage,
 	recsSlug,
 	recommendation,
+	evidence,
 }: RecsPageEvidenceProps) {
+	const router = useRouter();
+
+	// Build parent page path
+	const pathArray: string[] = router.asPath.split("/");
+	pathArray.pop();
+	const parentPagePath = pathArray.join("/");
+
 	const contentsItems: ContentsItem[] = [
 		{
 			title: "Why we made this recommendation",
-			link: "/",
-			current: true,
+			link: parentPagePath,
 		},
 		{
 			title: "Evidence and committee discussion",
-			link: "https://example.com",
+			link: router.asPath,
 		},
 	];
 
@@ -106,7 +116,13 @@ export default function recommendationEvidencePage({
 							}}
 						/>
 					</Recommendation>
-					<p>TODO: Evidence page content...</p>
+
+					{evidence.map((e) => (
+						<section key={e.id}>
+							<h2>{e.title}</h2>
+							<div dangerouslySetInnerHTML={{ __html: e.content.data }}></div>
+						</section>
+					))}
 				</GridItem>
 			</Grid>
 		</>
@@ -169,6 +185,23 @@ export const getServerSideProps: GetServerSideProps<
 	const contentResponse = await getContent(recommendation.content.href);
 	if (!contentResponse) return { notFound: true };
 
+	// Get evidence for this recommendation
+	const evidenceGroup = recommendation.nodes.find(
+		(n) => n.class === "rec-evidence-group"
+	) as EvidenceGroup;
+	const evidenceArray = evidenceGroup?.nodes.content.filter(
+		(n) => n.class === "evidence-ref"
+	);
+	if (!evidenceArray) return { notFound: true };
+
+	const evidence = [];
+	await Promise.all(
+		evidenceArray.map(async (r) => {
+			const response = await getContent(r.href);
+			if (response) evidence.push(response);
+		})
+	);
+
 	return {
 		props: {
 			topic: {
@@ -181,6 +214,7 @@ export const getServerSideProps: GetServerSideProps<
 			recsPage,
 			recsSlug,
 			recommendation,
+			evidence,
 		},
 	};
 };

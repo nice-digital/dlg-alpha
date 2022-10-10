@@ -66,6 +66,10 @@ export interface RecsPageNode extends BaseNode<"recspage"> {
 	nodes: (RecommendationConversationsGroup | RecommendationInstructionsGroup)[];
 }
 
+export interface EvidenceNode extends BaseNode<"recspage"> {
+	content: FeedContent[];
+}
+
 export const ConversationsGroupClass = "rec-conversations-group";
 export interface RecommendationConversationsGroup
 	extends BaseNode<typeof ConversationsGroupClass> {
@@ -118,7 +122,8 @@ export interface InstructionRecommendation
 
 export interface EvidenceGroup {
 	class: "rec-evidence-group";
-	title: string;
+	title?: string;
+	nodes: EvidenceNode;
 }
 
 export interface ServiceUserInformation {
