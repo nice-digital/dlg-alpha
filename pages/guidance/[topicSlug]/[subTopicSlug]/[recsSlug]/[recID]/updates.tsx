@@ -78,7 +78,7 @@ export default function recommendationUpdatesPage({
 
 			<RecHorizontalNav currentLink={RecHorizontalNavOption.Updates} />
 
-			<h2>Recommendation</h2>
+			<h2 className="h3">Recommendation</h2>
 			<Recommendation
 				id={recommendation.metadata["content-id"]}
 				dateUpdated={recommendation.changes[1].completed}

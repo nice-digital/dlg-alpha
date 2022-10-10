@@ -105,7 +105,7 @@ export default function RecommendationRationalePage({
 					<Contents items={contentsItems} />
 				</GridItem>
 				<GridItem cols={12} md={8} lg={9}>
-					<h2>Recommendation</h2>
+					<h2 className="h3">Recommendation</h2>
 					<Recommendation
 						id={recommendation.metadata["content-id"]}
 						dateUpdated={recommendation.changes[1].completed}
