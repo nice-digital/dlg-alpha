@@ -51,7 +51,6 @@ export default function GuidanceRecsPage({
 	): ContentsItem => ({
 		title: recsPageNode.content.title,
 		link: "#",
-		current: recsPageNode.title === recsPage.title,
 	});
 
 	const contentsItems: ContentsItem[] = Array.isArray(subTopic.nodes)
