@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import {
 	type TopicAssembly,
 	type PartialTopic,
@@ -27,20 +29,17 @@ export const getAllGuidanceTopics = async (): Promise<PartialTopic[]> => [
  */
 export const getTopic = async (slug: string): Promise<TopicAssembly | null> => {
 	if (slug === "breast-cancer") {
-		try {
-			let assembly: TopicAssembly = null;
+		let assembly: TopicAssembly = null;
+		await axios(`${apiRoot}/topic.json`)
+			.then((response) => {
+				assembly = response.data.assembly;
+			})
+			.catch((error) => {
+				console.log("Error fetching data:", error);
+				assembly = null;
+			});
 
-			await fetch(`${apiRoot}/topic.json`)
-				.then((response) => response.json())
-				.then((topic) => {
-					assembly = topic.assembly;
-				});
-
-			return assembly;
-		} catch (e) {
-			console.log("Error fetching data:", e);
-			return null;
-		}
+		return assembly;
 	} else {
 		return null;
 	}
@@ -55,18 +54,16 @@ export const getTopic = async (slug: string): Promise<TopicAssembly | null> => {
 export const getContent = async (
 	contentGuid: string
 ): Promise<ContentResponse | null> => {
-	try {
-		let contentResponse: ContentResponse = null;
+	let contentResponse: ContentResponse = null;
 
-		await fetch(`${apiRoot}/v3/content/${contentGuid}`)
-			.then((response) => response.json())
-			.then((response) => {
-				contentResponse = response;
-			});
+	await axios(`${apiRoot}/v3/content/${contentGuid}`)
+		.then((response) => {
+			contentResponse = response.data;
+		})
+		.catch((error) => {
+			console.log("Error fetching content:", error);
+			contentResponse = null;
+		});
 
-		return contentResponse;
-	} catch (e) {
-		console.log("Error fetching content:", e);
-		return null;
-	}
+	return contentResponse;
 };

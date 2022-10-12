@@ -16,6 +16,7 @@
     "@nice-digital/nds-horizontal-nav": "^3.0.2",
     "@nice-digital/nds-page-header": "^3.0.2",
     "@sindresorhus/slugify": "^2.1.1",
+    "axios": "^1.1.2",
     "config": "^3.3.8",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
