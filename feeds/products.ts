@@ -46,9 +46,6 @@ export const getTopic = async (slug: string): Promise<TopicAssembly | null> => {
 	}
 };
 
-// export const getTopic = async (slug: string): Promise<TopicAssembly | null> =>
-// 	slug === "breast-cancer" ? (topic.assembly as TopicAssembly) : null;
-
 /**
  * Requests content from the Content API with the given guid id
  *
