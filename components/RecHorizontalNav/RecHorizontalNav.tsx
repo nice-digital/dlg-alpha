@@ -6,6 +6,7 @@ import {
 
 export interface RecHorizontalNavProps {
 	currentLink: RecHorizontalNavOption;
+	baseUrl?: string;
 }
 
 export enum RecHorizontalNavOption {
@@ -16,24 +17,25 @@ export enum RecHorizontalNavOption {
 
 export const RecHorizontalNav: FC<RecHorizontalNavProps> = ({
 	currentLink,
+	baseUrl = "/",
 }) => {
 	return (
 		<HorizontalNav aria-label="TODO: generate rec-specific label">
 			<HorizontalNavLink
 				isCurrent={currentLink === RecHorizontalNavOption.Evidence}
-				destination="evidence"
+				destination={`${baseUrl}/evidence`}
 			>
 				Evidence
 			</HorizontalNavLink>
 			<HorizontalNavLink
 				isCurrent={currentLink === RecHorizontalNavOption.Updates}
-				destination="updates"
+				destination={`${baseUrl}/updates`}
 			>
 				Update information
 			</HorizontalNavLink>
 			<HorizontalNavLink
 				isCurrent={currentLink === RecHorizontalNavOption.SDM}
-				destination="sdm"
+				destination={`${baseUrl}/sdm`}
 			>
 				Shared decision making
 			</HorizontalNavLink>

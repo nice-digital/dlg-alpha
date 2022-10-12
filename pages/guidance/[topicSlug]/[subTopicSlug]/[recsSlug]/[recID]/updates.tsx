@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 import slugify from "@sindresorhus/slugify";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
@@ -34,7 +35,7 @@ export interface RecsPageUpdatesProps {
 	recommendation: InstructionRecommendation;
 }
 
-export default function recommendationUpdatesPage({
+export default function RecommendationUpdatesPage({
 	topic,
 	topicSlug,
 	subTopic,
@@ -43,6 +44,13 @@ export default function recommendationUpdatesPage({
 	recsSlug,
 	recommendation,
 }: RecsPageUpdatesProps) {
+	const router = useRouter();
+
+	// Build parent page path
+	const pathArray: string[] = router.asPath.split("/");
+	pathArray.pop();
+	const parentPagePath = pathArray.join("/");
+
 	return (
 		<>
 			<NextSeo title="Updates page"></NextSeo>
@@ -76,7 +84,10 @@ export default function recommendationUpdatesPage({
 				lead={recsPage.content.title}
 			/>
 
-			<RecHorizontalNav currentLink={RecHorizontalNavOption.Updates} />
+			<RecHorizontalNav
+				currentLink={RecHorizontalNavOption.Updates}
+				baseUrl={parentPagePath}
+			/>
 
 			<h2 className="h3">Recommendation</h2>
 			<Recommendation

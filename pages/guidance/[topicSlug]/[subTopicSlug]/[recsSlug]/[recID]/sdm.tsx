@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 import slugify from "@sindresorhus/slugify";
 import { Breadcrumb, Breadcrumbs } from "@nice-digital/nds-breadcrumbs";
@@ -34,7 +35,7 @@ export interface RecsPageSDMProps {
 	sdm: ContentResponse[];
 }
 
-export default function recommendationSDMPage({
+export default function RecommendationSDMPage({
 	topic,
 	topicSlug,
 	subTopic,
@@ -44,6 +45,13 @@ export default function recommendationSDMPage({
 	recommendation,
 	sdm,
 }: RecsPageSDMProps) {
+	const router = useRouter();
+
+	// Build parent page path
+	const pathArray: string[] = router.asPath.split("/");
+	pathArray.pop();
+	const parentPagePath = pathArray.join("/");
+
 	return (
 		<>
 			<NextSeo title="SDM page"></NextSeo>
@@ -77,7 +85,10 @@ export default function recommendationSDMPage({
 				lead={recsPage.content.title}
 			/>
 
-			<RecHorizontalNav currentLink={RecHorizontalNavOption.SDM} />
+			<RecHorizontalNav
+				currentLink={RecHorizontalNavOption.SDM}
+				baseUrl={parentPagePath}
+			/>
 
 			<h2 className="h3">Recommendation</h2>
 			<Recommendation

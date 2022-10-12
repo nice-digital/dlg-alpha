@@ -53,6 +53,8 @@ export default function RecommendationRationalePage({
 	const pathArray: string[] = router.asPath.split("/");
 	pathArray.pop();
 	const parentPagePath = pathArray.join("/");
+	pathArray.pop();
+	const grandparentPagePath = pathArray.join("/");
 
 	const contentsItems: ContentsItem[] = [
 		{
@@ -98,7 +100,10 @@ export default function RecommendationRationalePage({
 				lead={recsPage.content.title}
 			/>
 
-			<RecHorizontalNav currentLink={RecHorizontalNavOption.Evidence} />
+			<RecHorizontalNav
+				currentLink={RecHorizontalNavOption.Evidence}
+				baseUrl={grandparentPagePath}
+			/>
 
 			<Grid gutter="loose">
 				<GridItem cols={12} md={4} lg={3}>
