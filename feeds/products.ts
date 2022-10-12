@@ -1,18 +1,10 @@
-import fs from "fs-extra";
-import path from "path";
 import {
 	type TopicAssembly,
 	type PartialTopic,
 	ContentResponse,
 } from "./types";
-import topic from "./../public/sample-feed-data/topic.json";
 
-const contentAPIMockFilesDir = path.join(
-	process.cwd(),
-	"public",
-	"sample-feed-data",
-	"content-api"
-);
+const apiRoot = "https://dlg-alpha-sample-feed.s3.eu-west-1.amazonaws.com";
 
 /**
  * Gets a list of the available guidance topics
@@ -33,8 +25,29 @@ export const getAllGuidanceTopics = async (): Promise<PartialTopic[]> => [
  * @param slug The slug (slugified title) of the topic to retrieve
  * @returns A promise that resolve with the full topic assembly if it exists, otherwise a promise that resolves to null
  */
-export const getTopic = async (slug: string): Promise<TopicAssembly | null> =>
-	slug === "breast-cancer" ? (topic.assembly as TopicAssembly) : null;
+export const getTopic = async (slug: string): Promise<TopicAssembly | null> => {
+	if (slug === "breast-cancer") {
+		try {
+			let assembly: TopicAssembly = null;
+
+			await fetch(`${apiRoot}/topic.json`)
+				.then((response) => response.json())
+				.then((topic) => {
+					assembly = topic.assembly;
+				});
+
+			return assembly;
+		} catch (e) {
+			console.log("Error fetching data:", e);
+			return null;
+		}
+	} else {
+		return null;
+	}
+};
+
+// export const getTopic = async (slug: string): Promise<TopicAssembly | null> =>
+// 	slug === "breast-cancer" ? (topic.assembly as TopicAssembly) : null;
 
 /**
  * Requests content from the Content API with the given guid id
@@ -45,8 +58,18 @@ export const getTopic = async (slug: string): Promise<TopicAssembly | null> =>
 export const getContent = async (
 	contentGuid: string
 ): Promise<ContentResponse | null> => {
-	// We're mocking the content API here from a bunch of static JSON files
-	const filePath = path.join(contentAPIMockFilesDir, contentGuid);
+	try {
+		let contentResponse: ContentResponse = null;
 
-	return (await fs.pathExists(filePath)) ? fs.readJson(filePath) : null;
+		await fetch(`${apiRoot}/v3/content/${contentGuid}`)
+			.then((response) => response.json())
+			.then((response) => {
+				contentResponse = response;
+			});
+
+		return contentResponse;
+	} catch (e) {
+		console.log("Error fetching content:", e);
+		return null;
+	}
 };
