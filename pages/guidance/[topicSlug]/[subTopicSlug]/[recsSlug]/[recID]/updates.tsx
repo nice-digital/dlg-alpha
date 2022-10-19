@@ -22,6 +22,7 @@ import {
 	InstructionRecommendation,
 } from "@/feeds/types";
 import { getTopic, getContent } from "@/feeds/products";
+import { formatDate } from "@/utils/dates";
 
 import styles from "./updates.module.scss";
 
@@ -107,7 +108,7 @@ export default function RecommendationUpdatesPage({
 					if (c["change-summary"]) {
 						return (
 							<li key={index}>
-								<h3>{c.completed}</h3>
+								<h3>{formatDate(c.completed)}</h3>
 								<p>{c["change-summary"]}</p>
 							</li>
 						);

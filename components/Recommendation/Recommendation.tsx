@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { type FC, type ReactNode } from "react";
 import styles from "./Recommendation.module.scss";
+import { formatDate } from "@/utils/dates";
 
 export interface RecommendationProps {
 	children: ReactNode;
@@ -26,7 +27,7 @@ export const Recommendation: FC<RecommendationProps> = ({
 		<div className={styles.recommendation}>
 			<div className={styles.id}>{id}</div>
 			<div className={styles.updated}>
-				Updated: <time>{dateUpdated}</time>
+				Updated: <time>{formatDate(dateUpdated, true)}</time>
 			</div>
 			<div className={styles.description}>{children}</div>
 			{(evidenceLink || updateLink || sdmLink) && (
