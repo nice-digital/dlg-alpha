@@ -7,6 +7,35 @@ import {
 } from "./types";
 
 const apiRoot = "https://dlg-alpha-sample-feed.s3.eu-west-1.amazonaws.com";
+const baseUrl = "https://sandbox.congility.net/NotusCloudApi";
+let authToken: string | null = null;
+
+// Get an auth token back from the Congility API
+const authenticate = async () => {
+	const credentials = "nice-service-user:N1c3U53R!@";
+
+	await axios
+		.post(
+			`${baseUrl}/v3/login?fallback=true&silo=nice`,
+			{},
+			{
+				headers: {
+					Authorization: `Basic ${Buffer.from(credentials).toString("base64")}`,
+				},
+			}
+		)
+		.then((response) => {
+			if (response?.data?.authenticated === true) {
+				authToken = response?.data?.skey;
+				console.log("Success: auth token is", authToken);
+			} else {
+				console.log("Auth failure:", response);
+			}
+		})
+		.catch((error) => {
+			console.log("Auth error:", error);
+		});
+};
 
 /**
  * Gets a list of the available guidance topics
@@ -29,7 +58,33 @@ export const getAllGuidanceTopics = async (): Promise<PartialTopic[]> => [
  */
 export const getTopic = async (slug: string): Promise<TopicAssembly | null> => {
 	if (slug === "breast-cancer") {
+		// Authenticate first
+		await authenticate();
+
+		// Now get the publication outline
 		let assembly: TopicAssembly = null;
+		const publicationGuid = "d71345ff-7469-4fef-918b-02afe7db51f6"; // Let's just hard-code for now
+
+		await axios
+			.get(`${baseUrl}/v3/publication/${publicationGuid}/outline`, {
+				headers: {
+					skey: authToken,
+				},
+				params: {
+					format: "pubSource",
+					formatTransform: "map2assembly-v3",
+				},
+			})
+			.then((response) => {
+				console.log("Got the outline:", response.data);
+				let testAssembly: TopicAssembly = response.data.content.data.assembly;
+				console.log({ testAssembly });
+			})
+			.catch((error) => {
+				console.log("Error getting outline:", error);
+			});
+
+		// Local temp request - to be replaced by API call
 		await axios(`${apiRoot}/topic.json`)
 			.then((response) => {
 				assembly = response.data.assembly;
