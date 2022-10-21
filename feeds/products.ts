@@ -12,7 +12,7 @@ let authToken: string | null = null;
 
 // Get an auth token back from the Congility API
 const authenticate = async () => {
-	const credentials = "nice-service-user:N1c3U53R!@";
+	const credentials = `${process.env.API_USERNAME}:${process.env.API_PASSWORD}`;
 
 	await axios
 		.post(
