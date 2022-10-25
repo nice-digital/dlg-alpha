@@ -4,14 +4,19 @@ export interface PartialTopic {
 	type: "topic";
 }
 
+export type FeedChangeToIgnore = {
+	remove: null;
+};
+
 export type FeedChange = {
 	completed: string;
 	"change-summary": string;
 };
 
-export type FeedChanges = FeedChange[];
+export type FeedChanges = (FeedChange | FeedChangeToIgnore)[];
 
 export type FeedMetadata = {
+	product?: string;
 	"content-id"?: string;
 	population?: string;
 	"care-stage"?: string;
@@ -29,6 +34,7 @@ export interface FeedContent {
 	class: string;
 	debugDITATag: DebugDITATag;
 	title: string;
+	theHref: string;
 	href: string;
 	"api-content": string;
 	metadata: FeedMetadata;
