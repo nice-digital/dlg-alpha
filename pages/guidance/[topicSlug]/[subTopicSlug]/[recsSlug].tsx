@@ -118,6 +118,7 @@ export const getServerSideProps: GetServerSideProps<
 		recsPageSlug = params.recsSlug as string,
 		topic = await getTopic(topicSlug);
 
+	// BUMP!!!!!!!!!!
 	if (!topic) return { notFound: true };
 
 	const subTopics = Array.isArray(topic.nodes) ? topic.nodes : [topic.nodes],
