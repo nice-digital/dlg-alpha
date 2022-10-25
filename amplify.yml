@@ -6,6 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
+        - printf "API_USERNAME=$API_USERNAME\nAPI_PASSWORD=$API_PASSWORD" >> .env
         - npm run build
   artifacts:
     baseDirectory: .next
